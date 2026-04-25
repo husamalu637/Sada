@@ -54,7 +54,6 @@
             align-items: center; 
             justify-content: center; 
             z-index: 10; 
-            transition: 0.3s;
         }
 
         .play-button { 
@@ -110,7 +109,6 @@
             </div>
             <video id="mainVideo" poster="https://w.meyon.com.ye/v?w/4xv3jXcziu5KRDdu33zKTd.jpg">
                 <source src="https://ia600604.us.archive.org/23/items/u1h7YzE7bvdhkd7dfWNW_19_0ab2552dcae83525f55ccbe4d4ed2fe6_video_480p_converted/u1h7YzE7bvdhkd7dfWNW_19_0ab2552dcae83525f55ccbe4d4ed2fe6_video_480p_converted.mp4" type="video/mp4">
-                متصفحك لا يدعم تشغيل الفيديو.
             </video>
         </div>
 
@@ -119,7 +117,7 @@
             <p>تبدأ المغامرة في "الجزيرة المفقودة" بعد مرور عشرين عاماً على الحرب العالمية الثالثة. يعيش عدنان مع جده في هدوء، حتى يجد فتاة غريبة فاقدة للوعي على الشاطئ تدعى "لينا".</p>
         </div>
 
-        <p style="color: #9ca3af; font-size: 13px; margin-top: 20px;">مشاهدة ممتعة بدون إعلانات مزعجة 🍿</p>
+        <p style="color: #9ca3af; font-size: 13px; margin-top: 20px;">مشاهدة ممتعة وآمنة 🍿</p>
     </div>
 
     <footer>جميع الحقوق محفوظة لموقع صدى الطفولة © 2026</footer>
@@ -129,12 +127,12 @@
             var v = document.getElementById('mainVideo');
             var overlay = document.getElementById('videoOverlay');
             
-            // إخفاء الغطاء وتشغيل الفيديو مباشرة
+            // تشغيل الفيديو مباشرة وإظهار أدوات التحكم
             overlay.style.display = 'none';
             v.controls = true;
             v.play();
             
-            // إزالة وظيفة الضغط لمنع إعادة التشغيل من الخارج
+            // إزالة الحدث لمنع التكرار
             document.getElementById('playerBox').onclick = null;
         }
     </script>
