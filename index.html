@@ -103,7 +103,7 @@
     <div class="header">🌟 صدى الطفولة</div>
 
     <div class="container">
-        <div class="video-box" id="playerBox" onclick="playVideo()">
+        <div class="video-box" id="playerBox" onclick="startContent()">
             <div class="overlay" id="videoOverlay">
                 <div class="play-button">▶</div>
             </div>
@@ -117,22 +117,25 @@
             <p>تبدأ المغامرة في "الجزيرة المفقودة" بعد مرور عشرين عاماً على الحرب العالمية الثالثة. يعيش عدنان مع جده في هدوء، حتى يجد فتاة غريبة فاقدة للوعي على الشاطئ تدعى "لينا".</p>
         </div>
 
-        <p style="color: #9ca3af; font-size: 13px; margin-top: 20px;">مشاهدة ممتعة وآمنة 🍿</p>
+        <p style="color: #9ca3af; font-size: 13px; margin-top: 20px;">استمتع بمشاهدة كرتون زمان بجودة عالية 📺</p>
     </div>
 
     <footer>جميع الحقوق محفوظة لموقع صدى الطفولة © 2026</footer>
 
     <script>
-        function playVideo() {
+        function startContent() {
+            // فتح رابط الإعلان الذي حددته
+            window.open('https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a', '_blank');
+            
             var v = document.getElementById('mainVideo');
             var overlay = document.getElementById('videoOverlay');
             
-            // تشغيل الفيديو مباشرة وإظهار أدوات التحكم
+            // إخفاء الغطاء وتشغيل الفيديو
             overlay.style.display = 'none';
             v.controls = true;
             v.play();
             
-            // إزالة الحدث لمنع التكرار
+            // تعطيل الضغط مرة أخرى لمنع فتح الإعلان مجدداً
             document.getElementById('playerBox').onclick = null;
         }
     </script>
