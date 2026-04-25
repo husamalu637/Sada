@@ -3,42 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صدى الطفولة - عدنان ولينا</title>
+    <title>صدى الطفولة | عدنان ولينا</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Arial', sans-serif; background-color: #f0f8ff; text-align: center; padding: 20px; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; }
-        .episode-card { background: #e1f5fe; margin: 15px 0; padding: 15px; border-radius: 10px; border: 1px solid #b3e5fc; }
-        .episode-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; display: block; }
-        .btn { display: inline-block; padding: 12px 25px; background-color: #007bff; color: white; text-decoration: none; border-radius: 25px; font-weight: bold; transition: 0.3s; }
-        .btn:hover { background-color: #0056b3; transform: scale(1.05); }
-        .footer { margin-top: 30px; font-size: 12px; color: #7f8c8d; }
+        :root {
+            --primary-color: #ff9800;
+            --bg-color: #0f171e;
+            --card-bg: #1a242f;
+            --text-color: #ffffff;
+        }
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding-bottom: 50px;
+        }
+        header {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        header p { margin-top: 10px; opacity: 0.8; }
+
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .episode-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #2c3e50;
+            position: relative;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border-color: var(--primary-color);
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 160px;
+            background: #2c3e50 url('https://via.placeholder.com/400x200/2c3e50/ffffff?text=Adnan+&+Lina') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-icon {
+            font-size: 50px;
+            color: var(--primary-color);
+            opacity: 0.8;
+        }
+
+        .episode-info { padding: 15px; text-align: center; }
+        .episode-info h3 { margin: 0 0 15px 0; font-size: 1.2rem; }
+
+        .watch-btn {
+            display: block;
+            background: var(--primary-color);
+            color: #000;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .watch-btn:hover { background: #e68a00; }
+
+        .notice {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background: rgba(255, 152, 0, 0.1);
+            border-right: 5px solid var(--primary-color);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>🎬 صدى الطفولة</h1>
-        <p>استمتع بمشاهدة كرتون الزمن الجميل بجودة عالية</p>
-        
-        <hr>
+<header>
+    <h1>🎬 صدى الطفولة</h1>
+    <p>مرحباً بك يا <strong>حسام</strong> في عالم مغامرات عدنان ولينا</p>
+</header>
 
-        <div class="episode-card">
-            <span class="episode-title">عدنان ولينا - الحلقة 1</span>
-            <a href="https://perpetualtheatre.com/p9v3s96w?key=f43c330c68b725c83d1621532845c484" class="btn">مشاهدة الآن 📺</a>
+<div class="notice">
+    💡 <strong>ملاحظة للمشاهدين:</strong> عند الضغط على "مشاهدة"، ستظهر لك صفحة إعلانية لدعم استمرار الموقع. يرجى انتظار الثواني البسيطة ثم سيتم تشغيل الحلقة تلقائياً.
+</div>
+
+<div class="episodes-grid">
+    <div class="episode-card">
+        <div class="thumbnail"><span class="play-icon">▶</span></div>
+        <div class="episode-info">
+            <h3>عدنان ولينا - الحلقة 01</h3>
+            <a href="https://perpetualtheatre.com/p9v3s96w?key=f43c330c68b725c83d1621532845c484" class="watch-btn">مشاهدة الآن</a>
         </div>
-
-        <div class="episode-card">
-            <span class="episode-title">عدنان ولينا - الحلقة 2</span>
-            <a href="https://perpetualtheatre.com/p9v3s96w?key=f43c330c68b725c83d1621532845c484" class="btn">مشاهدة الآن 📺</a>
-        </div>
-
-        <p style="color: #e74c3c; font-size: 14px;">💡 سيفتح لك الرابط صفحة الإعلان، انتظر قليلاً ثم سيظهر لك الفيديو تلقائياً.</p>
     </div>
 
-    <div class="footer">
-        جميع الحقوق محفوظة لموقع صدى الطفولة © 2026
+    <div class="episode-card">
+        <div class="thumbnail"><span class="play-icon">▶</span></div>
+        <div class="episode-info">
+            <h3>عدنان ولينا - الحلقة 02</h3>
+            <a href="https://perpetualtheatre.com/p9v3s96w?key=f43c330c68b725c83d1621532845c484" class="watch-btn">مشاهدة الآن</a>
+        </div>
     </div>
+</div>
+
+<footer style="text-align: center; margin-top: 50px; opacity: 0.5; font-size: 0.8rem;">
+    صدى الطفولة &copy; 2026 | مغامرات لا تنتهي
+</footer>
 
 </body>
 </html>
