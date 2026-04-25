@@ -3,65 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صدى الطفولة | مشاهدة مباشرة</title>
+    <title>صدى الطفولة | عدنان ولينا</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #00d2ff; --bg: #050a0f; --card: #111b27; }
-        body { background-color: var(--bg); color: white; font-family: 'Cairo', sans-serif; margin: 0; text-align: center; }
-        header { background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 30px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        .container { padding: 20px; max-width: 500px; margin: auto; }
-        .episode-card { background: var(--card); border: 1px solid #1e2d3d; border-radius: 15px; padding: 25px; margin-bottom: 25px; transition: 0.3s; }
-        .episode-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .watch-btn { 
-            display: block; 
-            background: var(--primary); 
-            color: #050a0f; 
-            text-decoration: none; 
-            padding: 15px; 
-            border-radius: 30px; 
-            font-weight: bold; 
-            font-size: 1.1rem;
-            cursor: pointer;
-            border: none;
-            width: 100%;
-            font-family: 'Cairo';
+        body { background-color: #050a0f; color: white; font-family: 'Cairo', sans-serif; margin: 0; text-align: center; }
+        header { background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 20px; box-shadow: 0 2px 15px rgba(0,0,0,0.4); }
+        
+        /* رسالة الاعتذار */
+        .notice { 
+            background: #fff3cd; color: #856404; padding: 15px; 
+            margin: 20px auto; max-width: 600px; border-radius: 8px; 
+            border-right: 5px solid #ffeeba; font-size: 0.9rem; font-weight: bold;
         }
-        .footer { opacity: 0.4; font-size: 0.8rem; margin-top: 50px; padding: 20px; }
+
+        .video-wrapper { max-width: 800px; margin: 20px auto; padding: 10px; background: #111b27; border-radius: 15px; }
+        
+        /* تصميم زر الإعلان */
+        .ad-btn { 
+            display: block; background: #ff9800; color: black; padding: 15px; 
+            text-decoration: none; border-radius: 10px; font-weight: bold; 
+            margin-bottom: 20px; cursor: pointer; border: none; width: 100%; font-family: 'Cairo';
+        }
+
+        /* حاوية الفيديو (مخفية في البداية) */
+        #player-container { display: none; margin-top: 20px; }
+        
+        /* جعل الفيديو متجاوب مع الشاشة */
+        .responsive-iframe { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .responsive-iframe iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px; }
+
+        .footer { opacity: 0.5; font-size: 0.8rem; margin-top: 40px; padding: 20px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>🎬 صدى الطفولة</h1>
-    <p>بوابتك لمشاهدة عدنان ولينا بجودة عالية</p>
 </header>
 
-<div class="container">
-    <div class="episode-card">
-        <h3>عدنان ولينا - الحلقة 01</h3>
-        <button onclick="watchDirect('https://www.mediafire.com/file/rl31j4k92jmqa9r/u1h7YzE7bvdhkd7dfWNW_19_0ab2552dcae83525f55ccbe4d4ed2fe6_video_480p_converted.mp4/file')" class="watch-btn">تشغيل الآن 📺</button>
-    </div>
+<div class="notice">
+    📢 نعتذر عن أي تخبط تقني؛ الموقع لا يزال جديداً وتحت التطوير لضمان أفضل جودة مشاهدة لكم. شكراً لصبركم!
+</div>
 
-    <div class="episode-card">
-        <h3>عدنان ولينا - الحلقة 02</h3>
-        <button onclick="watchDirect('رابط_الحلقة_الثانية_من_ميديا_فاير')" class="watch-btn">قريباً.. ⏳</button>
+<div class="video-wrapper">
+    <h3>عدنان ولينا - الحلقة 01</h3>
+    
+    <button onclick="startWatching()" class="ad-btn">فتح سيرفر المشاهدة 🔓</button>
+
+    <div id="player-container">
+        <div class="responsive-iframe">
+            <iframe src="https://meyon.com.ye/videos/embed/1cb15e94-c5ef-4766-95fb-1d736a545d2e" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+        </div>
     </div>
 </div>
 
 <footer class="footer">جميع الحقوق محفوظة - صدى الطفولة &copy; 2026</footer>
 
 <script>
-    function watchDirect(videoUrl) {
-        // رابط الإعلان الربحي الخاص بك
-        const adLink = 'https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a';
+    function startWatching() {
+        // 1. فتح الإعلان في صفحة جديدة (للربح)
+        window.open('https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a', '_blank');
         
-        // 1. فتح الإعلان في نافذة جديدة لضمان احتساب الأرباح
-        window.open(adLink, '_blank');
-        
-        // 2. تحويل المتابع لصفحة المشاهدة في ميديا فاير
-        setTimeout(function() {
-            window.location.href = videoUrl;
-        }, 800);
+        // 2. إظهار مشغل الفيديو في الصفحة
+        document.getElementById('player-container').style.display = 'block';
     }
 </script>
 
