@@ -6,117 +6,54 @@
     <title>صدى الطفولة | بوابة الكرتون الكلاسيكي</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #00d2ff;
-            --accent-color: #3a7bd5;
-            --bg-color: #050a0f;
-            --card-bg: #111b27;
-            --text-color: #e0e0e0;
-        }
-        body {
-            margin: 0;
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
-            padding: 50px 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-        header p { margin-top: 10px; color: #fff; opacity: 0.9; font-size: 1.1rem; }
-
-        .episodes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            padding: 40px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .episode-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid #1e2d3d;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .episode-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary-color);
-            box-shadow: 0 15px 35px rgba(0,210,255,0.2);
-        }
-
-        .episode-info { padding: 20px; text-align: center; }
-        .episode-info h3 { margin: 0 0 20px 0; font-size: 1.3rem; color: #fff; }
-
-        .watch-btn {
-            display: block;
-            background: linear-gradient(to right, #00d2ff, #3a7bd5);
-            color: #fff;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.05rem;
-            transition: 0.3s;
-        }
-
-        .watch-btn:hover { opacity: 0.9; transform: scale(1.02); }
-
-        .disclaimer {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            font-size: 0.85rem;
-            text-align: center;
-            color: #aaa;
-        }
+        :root { --primary-color: #00d2ff; --bg-color: #050a0f; --card-bg: #111b27; --text-color: #e0e0e0; }
+        body { margin: 0; font-family: 'Cairo', sans-serif; background-color: var(--bg-color); color: var(--text-color); text-align: center; }
+        header { background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); padding: 40px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        h1 { margin: 0; font-size: 2.2rem; color: #fff; }
+        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 30px; max-width: 1000px; margin: auto; }
+        .episode-card { background: var(--card-bg); border-radius: 15px; padding: 20px; border: 1px solid #1e2d3d; transition: 0.3s; }
+        .episode-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+        .watch-btn { display: block; background: linear-gradient(to right, #00d2ff, #3a7bd5); color: #fff; text-decoration: none; padding: 12px; border-radius: 30px; font-weight: bold; cursor: pointer; border: none; width: 100%; font-family: 'Cairo'; font-size: 1rem; }
+        .footer { opacity: 0.4; font-size: 0.8rem; padding: 20px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>🎬 صدى الطفولة</h1>
-    <p>أرشيف متكامل لمغامرات عدنان ولينا بجودة عالية</p>
+    <p>أرشيف مغامرات عدنان ولينا بجودة عالية</p>
 </header>
 
 <div class="episodes-grid">
     <div class="episode-card">
-        <div class="episode-info">
-            <h3>مغامرات عدنان - الحلقة 01</h3>
-            <a href="https://perpetualtheatre.com/p9v3s96w?key=f43c330c68b725c83d1621532845c484" class="watch-btn">بدء المشاهدة 📺</a>
-        </div>
+        <h3>مغامرات عدنان - الحلقة 01</h3>
+        <button onclick="watchEpisode('https://ia800106.us.archive.org/12/items/ooanime.com.-eadnan.-waliuna.-s-01.-ep-01/%5BOOAnime.com%5D.Eadnan.Waliuna.S01.Ep01.mp4')" class="watch-btn">بدء المشاهدة 📺</button>
     </div>
 
     <div class="episode-card">
-        <div class="episode-info">
-            <h3>مغامرات عدنان - الحلقة 02</h3>
-            <a href="https://perpetualtheatre.com/p9v3s96w?key=f43c330c68b725c83d1621532845c484" class="watch-btn">بدء المشاهدة 📺</a>
-        </div>
+        <h3>مغامرات عدنان - الحلقة 02</h3>
+        <button onclick="watchEpisode('https://ia600106.us.archive.org/12/items/ooanime.com.-eadnan.-waliuna.-s-01.-ep-02/%5BOOAnime.com%5D.Eadnan.Waliuna.S01.Ep02.mp4')" class="watch-btn">بدء المشاهدة 📺</button>
     </div>
 </div>
 
-<div class="disclaimer">
-    * يرجى العلم أن الروابط مدعومة بإعلانات لضمان استمرارية الخادم المجاني.
-</div>
-
-<footer style="text-align: center; padding: 20px; opacity: 0.4; font-size: 0.8rem;">
+<footer class="footer">
     صدى الطفولة &copy; 2026 | جميع الحقوق محفوظة
 </footer>
+
+<script>
+    function watchEpisode(videoUrl) {
+        // رابطك الربحي الجديد الذي أرسلته لي
+        const adUrl = 'https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a';
+        
+        // 1. فتح الإعلان في نافذة جديدة
+        window.open(adUrl, '_blank');
+        
+        // 2. تحويل الصفحة الحالية إلى الفيديو بعد نصف ثانية
+        setTimeout(function() {
+            window.location.href = videoUrl;
+        }, 500); 
+    }
+</script>
 
 </body>
 </html>
