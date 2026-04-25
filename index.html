@@ -3,52 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صدى الطفولة | بوابة الكرتون</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>صدى الطفولة | مشاهدة مباشرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-color: #00d2ff; --bg-color: #050a0f; --card-bg: #111b27; --text-color: #e0e0e0; }
-        body { margin: 0; font-family: 'Cairo', sans-serif; background-color: var(--bg-color); color: var(--text-color); text-align: center; }
-        header { background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); padding: 35px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        h1 { margin: 0; font-size: 2.2rem; color: #fff; }
-        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 30px; max-width: 1000px; margin: auto; }
-        .episode-card { background: var(--card-bg); border-radius: 15px; padding: 25px; border: 1px solid #1e2d3d; transition: 0.3s; }
-        .episode-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
-        .watch-btn { display: block; background: linear-gradient(to right, #00d2ff, #3a7bd5); color: #fff; text-decoration: none; padding: 12px; border-radius: 30px; font-weight: bold; cursor: pointer; border: none; width: 100%; font-family: 'Cairo'; font-size: 1rem; }
-        .footer { opacity: 0.4; font-size: 0.8rem; padding: 20px; }
+        :root { --primary: #00d2ff; --bg: #050a0f; --card: #111b27; }
+        body { background-color: var(--bg); color: white; font-family: 'Cairo', sans-serif; margin: 0; text-align: center; }
+        header { background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 30px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .container { padding: 20px; max-width: 500px; margin: auto; }
+        .episode-card { background: var(--card); border: 1px solid #1e2d3d; border-radius: 15px; padding: 25px; margin-bottom: 25px; transition: 0.3s; }
+        .episode-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .watch-btn { 
+            display: block; 
+            background: var(--primary); 
+            color: #050a0f; 
+            text-decoration: none; 
+            padding: 15px; 
+            border-radius: 30px; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            font-family: 'Cairo';
+        }
+        .footer { opacity: 0.4; font-size: 0.8rem; margin-top: 50px; padding: 20px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>🎬 صدى الطفولة</h1>
-    <p>أرشيف مغامرات عدنان ولينا بجودة عالية</p>
+    <p>بوابتك لمشاهدة عدنان ولينا بجودة عالية</p>
 </header>
 
-<div class="episodes-grid">
+<div class="container">
     <div class="episode-card">
         <h3>عدنان ولينا - الحلقة 01</h3>
-        <button onclick="playVideo('https://archive.org/details/ooanime.com.-eadnan.-waliuna.-s-01.-ep-01')" class="watch-btn">مشاهدة الحلقة 📺</button>
+        <button onclick="watchDirect('https://www.mediafire.com/file/rl31j4k92jmqa9r/u1h7YzE7bvdhkd7dfWNW_19_0ab2552dcae83525f55ccbe4d4ed2fe6_video_480p_converted.mp4/file')" class="watch-btn">تشغيل الآن 📺</button>
     </div>
 
     <div class="episode-card">
         <h3>عدنان ولينا - الحلقة 02</h3>
-        <button onclick="playVideo('https://archive.org/details/ooanime.com.-eadnan.-waliuna.-s-01.-ep-02')" class="watch-btn">مشاهدة الحلقة 📺</button>
+        <button onclick="watchDirect('رابط_الحلقة_الثانية_من_ميديا_فاير')" class="watch-btn">قريباً.. ⏳</button>
     </div>
 </div>
 
-<footer class="footer">صدى الطفولة &copy; 2026</footer>
+<footer class="footer">جميع الحقوق محفوظة - صدى الطفولة &copy; 2026</footer>
 
 <script>
-    function playVideo(url) {
-        // رابطك الربحي الجديد والشغال
-        var adLink = 'https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a';
+    function watchDirect(videoUrl) {
+        // رابط الإعلان الربحي الخاص بك
+        const adLink = 'https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a';
         
-        // 1. فتح الإعلان في نافذة جديدة (للربح)
+        // 1. فتح الإعلان في نافذة جديدة لضمان احتساب الأرباح
         window.open(adLink, '_blank');
         
-        // 2. التحويل لصفحة الحلقة الأصلية في الأرشيف (للمشاهدة)
+        // 2. تحويل المتابع لصفحة المشاهدة في ميديا فاير
         setTimeout(function() {
-            window.location.href = url;
+            window.location.href = videoUrl;
         }, 800);
     }
 </script>
