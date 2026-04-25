@@ -3,71 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صدى الطفولة | عدنان ولينا</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+    <title>صدى الطفولة | عدنان ولينا - الحلقات الكاملة</title>
+    <meta name="description" content="شاهد جميع حلقات مسلسل عدنان ولينا بجودة عالية على موقع صدى الطفولة.">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #050a0f; color: white; font-family: 'Cairo', sans-serif; margin: 0; text-align: center; }
-        header { background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 20px; box-shadow: 0 2px 15px rgba(0,0,0,0.4); }
-        
-        /* رسالة الاعتذار */
-        .notice { 
-            background: #fff3cd; color: #856404; padding: 15px; 
-            margin: 20px auto; max-width: 600px; border-radius: 8px; 
-            border-right: 5px solid #ffeeba; font-size: 0.9rem; font-weight: bold;
-        }
-
-        .video-wrapper { max-width: 800px; margin: 20px auto; padding: 10px; background: #111b27; border-radius: 15px; }
-        
-        /* تصميم زر الإعلان */
-        .ad-btn { 
-            display: block; background: #ff9800; color: black; padding: 15px; 
-            text-decoration: none; border-radius: 10px; font-weight: bold; 
-            margin-bottom: 20px; cursor: pointer; border: none; width: 100%; font-family: 'Cairo';
-        }
-
-        /* حاوية الفيديو (مخفية في البداية) */
-        #player-container { display: none; margin-top: 20px; }
-        
-        /* جعل الفيديو متجاوب مع الشاشة */
-        .responsive-iframe { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-        .responsive-iframe iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px; }
-
-        .footer { opacity: 0.5; font-size: 0.8rem; margin-top: 40px; padding: 20px; }
+        :root { --primary: #00d2ff; --accent: #ff9800; --bg: #050a0f; --card: #111b27; }
+        body { background-color: var(--bg); color: white; font-family: 'Cairo', sans-serif; margin: 0; padding-bottom: 50px; }
+        header { background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 40px 20px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.6); }
+        .notice { background: #fff3cd; color: #856404; padding: 15px; margin: 20px auto; max-width: 800px; border-radius: 10px; border-right: 6px solid #ffeeba; font-size: 0.9rem; text-align: center; font-weight: bold; }
+        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; max-width: 1250px; margin: auto; }
+        .episode-card { background: var(--card); border: 1px solid #1e2d3d; border-radius: 15px; padding: 15px; transition: 0.3s; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+        .episode-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,210,255,0.2); }
+        h3 { margin: 10px 0; font-size: 1.1rem; color: #e0e0e0; }
+        .ad-btn { display: block; background: var(--accent); color: black; padding: 12px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-bottom: 10px; cursor: pointer; border: none; width: 100%; font-family: 'Cairo'; transition: 0.2s; }
+        .ad-btn:active { transform: scale(0.98); }
+        .video-container { display: none; margin-top: 10px; animation: fadeIn 0.5s; }
+        .responsive-iframe { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; }
+        .responsive-iframe iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        footer { text-align: center; margin-top: 50px; padding: 30px; border-top: 1px solid #1e2d3d; color: #555; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>🎬 صدى الطفولة</h1>
+    <p>الأرشيف الكامل لمغامرات عدنان ولينا</p>
 </header>
 
 <div class="notice">
-    📢 نعتذر عن أي تخبط تقني؛ الموقع لا يزال جديداً وتحت التطوير لضمان أفضل جودة مشاهدة لكم. شكراً لصبركم!
+    ✨ تم اكتمال السلسلة! 26 حلقة من المتعة والذكريات. مشاهدة طيبة للجميع.
 </div>
 
-<div class="video-wrapper">
-    <h3>عدنان ولينا - الحلقة 01</h3>
-    
-    <button onclick="startWatching()" class="ad-btn">فتح سيرفر المشاهدة 🔓</button>
-
-    <div id="player-container">
-        <div class="responsive-iframe">
-            <iframe src="https://meyon.com.ye/videos/embed/1cb15e94-c5ef-4766-95fb-1d736a545d2e" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
-        </div>
+<div class="container" id="episodes-grid">
     </div>
-</div>
-
-<footer class="footer">جميع الحقوق محفوظة - صدى الطفولة &copy; 2026</footer>
 
 <script>
-    function startWatching() {
-        // 1. فتح الإعلان في صفحة جديدة (للربح)
+    const episodes = [
+        { id: "v1", title: "الحلقة 01", src: "https://meyon.com.ye/videos/embed/1cb15e94-c5ef-4766-95fb-1d736a545d2e" },
+        { id: "v2", title: "الحلقة 02", src: "https://meyon.com.ye/videos/embed/0fbbfac4-cb1d-49d8-8a27-dbfb8b3b526e" },
+        { id: "v3", title: "الحلقة 03", src: "https://meyon.com.ye/videos/embed/d0e8cad7-2aa0-4fe4-846b-2c5a950eaa00" },
+        { id: "v4", title: "الحلقة 04", src: "https://meyon.com.ye/videos/embed/5c68bda0-978c-4ad8-a77f-f4b401299eba" },
+        { id: "v5", title: "الحلقة 05", src: "https://meyon.com.ye/videos/embed/52490adb-e34c-4f79-a0b2-4054d892fc02" },
+        { id: "v6", title: "الحلقة 06", src: "https://meyon.com.ye/videos/embed/1e125bd3-e207-4a44-b99a-2e5bdaf8c56f" },
+        { id: "v7", title: "الحلقة 07", src: "https://meyon.com.ye/videos/embed/38293f0d-d0ee-4718-aef4-93a776b9315c" },
+        { id: "v8", title: "الحلقة 08", src: "https://meyon.com.ye/videos/embed/15cb5150-472c-4554-bbee-66d2dfe8fedf" },
+        { id: "v9", title: "الحلقة 09", src: "https://meyon.com.ye/videos/embed/f99a8569-9734-4274-a1c1-e79f89410346" },
+        { id: "v10", title: "الحلقة 10", src: "https://meyon.com.ye/videos/embed/8e2e9a66-e373-44a4-86af-2bae10eda3a5" },
+        { id: "v11", title: "الحلقة 11", src: "https://meyon.com.ye/videos/embed/2a2eea8f-0507-4935-ab52-6e5407ac0f56" },
+        { id: "v12", title: "الحلقة 12", src: "https://meyon.com.ye/videos/embed/9b3b878d-09a4-42ba-9bad-10ad858fa86d" },
+        { id: "v13", title: "الحلقة 13", src: "https://meyon.com.ye/videos/embed/804c60d6-20c5-485a-ab56-d6859b740c1e" },
+        { id: "v14", title: "الحلقة 14", src: "https://meyon.com.ye/videos/embed/526226c0-be2f-4574-90a8-a4d945671082" },
+        { id: "v15", title: "الحلقة 15", src: "https://meyon.com.ye/videos/embed/74391bf5-1fa1-4c91-8a0a-f05e62b06f81" },
+        { id: "v16", title: "الحلقة 16", src: "https://meyon.com.ye/videos/embed/770a59c5-a595-47d9-86ca-f71c171e080a" },
+        { id: "v17", title: "الحلقة 17", src: "https://meyon.com.ye/videos/embed/3c0cecf2-80ee-4ff3-a9f5-8e4748b8d702" },
+        { id: "v18", title: "الحلقة 18", src: "https://meyon.com.ye/videos/embed/2babf684-286b-40b4-bb78-8720f299bca0" },
+        { id: "v19", title: "الحلقة 19", src: "https://meyon.com.ye/videos/embed/d1b7b6ff-1ee6-4cac-86d5-29c28b559a37" },
+        { id: "v20", title: "الحلقة 20", src: "https://meyon.com.ye/videos/embed/aa0e3307-bf84-4ca6-8fe2-9c767dc61379" },
+        { id: "v21", title: "الحلقة 21", src: "#" }, // أضف الرابط هنا عند توفره
+        { id: "v22", title: "الحلقة 22", src: "https://meyon.com.ye/videos/embed/91310d98-3c87-4e42-be78-8a9e35edeeff" },
+        { id: "v23", title: "الحلقة 23", src: "https://meyon.com.ye/videos/embed/c9443ea4-c5e4-46d3-923d-ea119cb2e68a" },
+        { id: "v24", title: "الحلقة 24", src: "https://meyon.com.ye/videos/embed/2f066685-d203-4655-9cc9-f735b648fb5d" },
+        { id: "v25", title: "الحلقة 25", src: "https://meyon.com.ye/videos/embed/508ed91d-098f-46d0-884e-6a0e4d9d7121" },
+        { id: "v26", title: "الحلقة 26 والأخيرة", src: "https://meyon.com.ye/videos/embed/9b36a743-1c80-439d-a78c-be6559ea10ec" }
+    ];
+
+    const grid = document.getElementById('episodes-grid');
+
+    episodes.forEach(ep => {
+        const card = document.createElement('div');
+        card.className = 'episode-card';
+        card.innerHTML = `
+            <h3>عدنان ولينا - ${ep.title}</h3>
+            <button onclick="showVideo('${ep.id}')" class="ad-btn">مشاهدة الحلقة 🔓</button>
+            <div id="${ep.id}" class="video-container">
+                <div class="responsive-iframe">
+                    <iframe src="${ep.src}" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+
+    function showVideo(id) {
+        // فتح الإعلان في نافذة جديدة
         window.open('https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a', '_blank');
         
-        // 2. إظهار مشغل الفيديو في الصفحة
-        document.getElementById('player-container').style.display = 'block';
+        // إخفاء جميع الفيديوهات المفتوحة وتصفير محتواها لتقليل استهلاك المتصفح
+        const allContainers = document.querySelectorAll('.video-container');
+        allContainers.forEach(c => c.style.display = 'none');
+        
+        // إظهار الفيديو المطلوب
+        const target = document.getElementById(id);
+        target.style.display = 'block';
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 </script>
 
+<footer>جميع الحقوق محفوظة - صدى الطفولة &copy; 2026</footer>
 </body>
 </html>
