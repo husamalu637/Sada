@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صدى الطفولة | أرشيف عدنان ولينا</title>
+    <title>صدى الطفولة | بوابة الكرتون</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --primary-color: #00d2ff; --bg-color: #050a0f; --card-bg: #111b27; --text-color: #e0e0e0; }
         body { margin: 0; font-family: 'Cairo', sans-serif; background-color: var(--bg-color); color: var(--text-color); text-align: center; }
-        header { background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); padding: 30px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 25px; max-width: 1000px; margin: auto; }
-        .episode-card { background: var(--card-bg); border-radius: 12px; padding: 20px; border: 1px solid #1e2d3d; }
-        .watch-btn { display: block; background: linear-gradient(to right, #00d2ff, #3a7bd5); color: #fff; text-decoration: none; padding: 12px; border-radius: 30px; font-weight: bold; cursor: pointer; border: none; width: 100%; font-family: 'Cairo'; }
+        header { background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); padding: 35px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        h1 { margin: 0; font-size: 2.2rem; color: #fff; }
+        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 30px; max-width: 1000px; margin: auto; }
+        .episode-card { background: var(--card-bg); border-radius: 15px; padding: 25px; border: 1px solid #1e2d3d; transition: 0.3s; }
+        .episode-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+        .watch-btn { display: block; background: linear-gradient(to right, #00d2ff, #3a7bd5); color: #fff; text-decoration: none; padding: 12px; border-radius: 30px; font-weight: bold; cursor: pointer; border: none; width: 100%; font-family: 'Cairo'; font-size: 1rem; }
         .footer { opacity: 0.4; font-size: 0.8rem; padding: 20px; }
     </style>
 </head>
@@ -19,18 +21,18 @@
 
 <header>
     <h1>🎬 صدى الطفولة</h1>
-    <p>بوابة مشاهدة الزمن الجميل</p>
+    <p>أرشيف مغامرات عدنان ولينا بجودة عالية</p>
 </header>
 
 <div class="episodes-grid">
     <div class="episode-card">
         <h3>عدنان ولينا - الحلقة 01</h3>
-        <button onclick="playVideo('https://ia800106.us.archive.org/12/items/ooanime.com.-eadnan.-waliuna.-s-01.-ep-01/%5BOOAnime.com%5D.Eadnan.Waliuna.S01.Ep01.mp4')" class="watch-btn">مشاهدة الحلقة 📺</button>
+        <button onclick="playVideo('https://archive.org/details/ooanime.com.-eadnan.-waliuna.-s-01.-ep-01')" class="watch-btn">مشاهدة الحلقة 📺</button>
     </div>
 
     <div class="episode-card">
         <h3>عدنان ولينا - الحلقة 02</h3>
-        <button onclick="playVideo('https://ia600106.us.archive.org/12/items/ooanime.com.-eadnan.-waliuna.-s-01.-ep-02/%5BOOAnime.com%5D.Eadnan.Waliuna.S01.Ep02.mp4')" class="watch-btn">مشاهدة الحلقة 📺</button>
+        <button onclick="playVideo('https://archive.org/details/ooanime.com.-eadnan.-waliuna.-s-01.-ep-02')" class="watch-btn">مشاهدة الحلقة 📺</button>
     </div>
 </div>
 
@@ -38,16 +40,16 @@
 
 <script>
     function playVideo(url) {
-        // رابط الإعلان الجديد الخاص بك
+        // رابطك الربحي الجديد والشغال
         var adLink = 'https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a';
         
-        // فتح الإعلان في نافذة جديدة
+        // 1. فتح الإعلان في نافذة جديدة (للربح)
         window.open(adLink, '_blank');
         
-        // فتح الحلقة في نفس الصفحة بعد ثانية واحدة لضمان عمل الرابطين
+        // 2. التحويل لصفحة الحلقة الأصلية في الأرشيف (للمشاهدة)
         setTimeout(function() {
             window.location.href = url;
-        }, 1000);
+        }, 800);
     }
 </script>
 
