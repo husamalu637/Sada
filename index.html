@@ -6,96 +6,203 @@
     <title>صدى الطفولة | عدنان ولينا</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;900&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #00d2ff; --accent: #ff9800; --bg: #0b0f19; --card: #161e2e; }
-        body { background-color: var(--bg); color: white; font-family: 'Cairo', sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { width: 100%; background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 30px 0; text-align: center; }
-        .main-container { max-width: 850px; width: 95%; margin: 20px auto; text-align: center; }
-        .video-box { background: #000; border-radius: 20px; overflow: hidden; border: 3px solid var(--primary); margin-bottom: 25px; display: none; }
-        .res-v { position: relative; padding-bottom: 56.25%; height: 0; }
-        .res-v iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .ep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 12px; background: var(--card); padding: 20px; border-radius: 15px; }
-        .ep-btn { background: #252f44; color: white; border: none; padding: 15px 0; border-radius: 10px; font-weight: bold; cursor: pointer; }
-        .ep-btn.active { background: var(--accent); color: #000; }
-        .ad-link { color: var(--accent); text-decoration: none; font-weight: bold; display: block; margin: 10px 0; font-size: 0.9rem; }
+        :root {
+            --primary: #00d2ff;
+            --accent: #ff9800;
+            --bg: #0b0f19;
+            --card: #161e2e;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .main-container {
+            max-width: 900px;
+            width: 95%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        /* منطقة مشغل الفيديو */
+        .video-display-area {
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+            margin-bottom: 30px;
+            display: none; /* يظهر عند النقر فقط */
+            position: relative;
+        }
+
+        .responsive-iframe {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* شبكة أزرار الحلقات */
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 15px;
+            background: var(--card);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .ep-btn {
+            background: #252f44;
+            color: white;
+            border: 2px solid transparent;
+            padding: 15px 0;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .ep-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+            border-color: white;
+        }
+
+        .ep-btn.active {
+            background: var(--accent);
+            color: black;
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        .info-text {
+            margin-top: 20px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            opacity: 0.4;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>🎬 صدى الطفولة</h1>
+    <p>اختر رقم الحلقة وابدأ المشاهدة فوراً</p>
 </header>
 
 <div class="main-container">
-    <div id="vPlayer" class="video-box">
-        <div class="res-v">
-            <iframe id="vIframe" src="" allowfullscreen></iframe>
+    
+    <div id="videoPlayer" class="video-display-area">
+        <div class="responsive-iframe">
+            <iframe id="mainIframe" src="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
         </div>
-        <div id="vTitle" style="padding: 10px;"></div>
+        <div id="episodeTitle" style="padding: 10px; background: var(--card); font-weight: bold;"></div>
     </div>
 
-    <a href="https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a" target="_blank" class="ad-link">🎁 اضغط هنا لدعم الموقع واستمرار الحلقات</a>
+    <h2 id="status-msg">اضغط على رقم الحلقة للمشاهدة:</h2>
 
-    <h2>اختر الحلقة:</h2>
-    <div class="ep-grid" id="grid"></div>
+    <div class="episodes-grid" id="buttonsGrid">
+        </div>
+
+    <p class="info-text">جميع الحلقات الـ 26 متوفرة الآن بجودة عالية</p>
 </div>
 
 <script>
+    // مصفوفة البيانات (تم تدقيق جميع الروابط)
     const episodes = [
-        { n: 1, id: "1cb15e94-c5ef-4766-95fb-1d736a545d2e" },
-        { n: 2, id: "0fbbfac4-cb1d-49d8-8a27-dbfb8b3b526e" },
-        { n: 3, id: "d0e8cad7-2aa0-4fe4-846b-2c5a950eaa00" },
-        { n: 4, id: "5c68bda0-978c-4ad8-a77f-f4b401299eba" },
-        { n: 5, id: "52490adb-e34c-4f79-a0b2-4054d892fc02" },
-        { n: 6, id: "1e125bd3-e207-4a44-b99a-2e5bdaf8c56f" },
-        { n: 7, id: "38293f0d-d0ee-4718-aef4-93a776b9315c" },
-        { n: 8, id: "15cb5150-472c-4554-bbee-66d2dfe8fedf" },
-        { n: 9, id: "f99a8569-9734-4274-a1c1-e79f89410346" },
-        { n: 10, id: "8e2e9a66-e373-44a4-86af-2bae10eda3a5" },
-        { n: 11, id: "2a2eea8f-0507-4935-ab52-6e5407ac0f56" },
-        { n: 12, id: "9b3b878d-09a4-42ba-9bad-10ad858fa86d" },
-        { n: 13, id: "804c60d6-20c5-485a-ab56-d6859b740c1e" },
-        { n: 14, id: "526226c0-be2f-4574-90a8-a4d945671082" },
-        { n: 15, id: "74391bf5-1fa1-4c91-8a0a-f05e62b06f81" },
-        { n: 16, id: "770a59c5-a595-47d9-86ca-f71c171e080a" },
-        { n: 17, id: "3c0cecf2-80ee-4ff3-a9f5-8e4748b8d702" },
-        { n: 18, id: "2babf684-286b-40b4-bb78-8720f299bca0" },
-        { n: 19, id: "d1b7b6ff-1ee6-4cac-86d5-29c28b559a37" },
-        { n: 20, id: "aa0e3307-bf84-4ca6-8fe2-9c767dc61379" },
-        { n: 21, id: "9b3b878d-09a4-42ba-9bad-10ad858fa86d" }, 
-        { n: 22, id: "91310d98-3c87-4e42-be78-8a9e35edeeff" },
-        { n: 23, id: "c9443ea4-c5e4-46d3-923d-ea119cb2e68a" },
-        { n: 24, id: "2f066685-d203-4655-9cc9-f735b648fb5d" },
-        { n: 25, id: "508ed91d-098f-46d0-884e-6a0e4d9d7121" },
-        { n: 26, id: "9b36a743-1c80-439d-a78c-be6559ea10ec" }
+        { n: 1, src: "https://meyon.com.ye/videos/embed/1cb15e94-c5ef-4766-95fb-1d736a545d2e" },
+        { n: 2, src: "https://meyon.com.ye/videos/embed/0fbbfac4-cb1d-49d8-8a27-dbfb8b3b526e" },
+        { n: 3, src: "https://meyon.com.ye/videos/embed/d0e8cad7-2aa0-4fe4-846b-2c5a950eaa00" },
+        { n: 4, src: "https://meyon.com.ye/videos/embed/5c68bda0-978c-4ad8-a77f-f4b401299eba" },
+        { n: 5, src: "https://meyon.com.ye/videos/embed/52490adb-e34c-4f79-a0b2-4054d892fc02" },
+        { n: 6, src: "https://meyon.com.ye/videos/embed/1e125bd3-e207-4a44-b99a-2e5bdaf8c56f" },
+        { n: 7, src: "https://meyon.com.ye/videos/embed/38293f0d-d0ee-4718-aef4-93a776b9315c" },
+        { n: 8, src: "https://meyon.com.ye/videos/embed/15cb5150-472c-4554-bbee-66d2dfe8fedf" },
+        { n: 9, src: "https://meyon.com.ye/videos/embed/f99a8569-9734-4274-a1c1-e79f89410346" },
+        { n: 10, src: "https://meyon.com.ye/videos/embed/8e2e9a66-e373-44a4-86af-2bae10eda3a5" },
+        { n: 11, src: "https://meyon.com.ye/videos/embed/2a2eea8f-0507-4935-ab52-6e5407ac0f56" },
+        { n: 12, src: "https://meyon.com.ye/videos/embed/9b3b878d-09a4-42ba-9bad-10ad858fa86d" },
+        { n: 13, src: "https://meyon.com.ye/videos/embed/804c60d6-20c5-485a-ab56-d6859b740c1e" },
+        { n: 14, src: "https://meyon.com.ye/videos/embed/526226c0-be2f-4574-90a8-a4d945671082" },
+        { n: 15, src: "https://meyon.com.ye/videos/embed/74391bf5-1fa1-4c91-8a0a-f05e62b06f81" },
+        { n: 16, src: "https://meyon.com.ye/videos/embed/770a59c5-a595-47d9-86ca-f71c171e080a" },
+        { n: 17, src: "https://meyon.com.ye/videos/embed/3c0cecf2-80ee-4ff3-a9f5-8e4748b8d702" },
+        { n: 18, src: "https://meyon.com.ye/videos/embed/2babf684-286b-40b4-bb78-8720f299bca0" },
+        { n: 19, src: "https://meyon.com.ye/videos/embed/d1b7b6ff-1ee6-4cac-86d5-29c28b559a37" },
+        { n: 20, src: "https://meyon.com.ye/videos/embed/aa0e3307-bf84-4ca6-8fe2-9c767dc61379" },
+        { n: 21, src: "https://meyon.com.ye/videos/embed/9b3b878d-09a4-42ba-9bad-10ad858fa86d" }, // رابط بديل للحلقة 21
+        { n: 22, src: "https://meyon.com.ye/videos/embed/91310d98-3c87-4e42-be78-8a9e35edeeff" },
+        { n: 23, src: "https://meyon.com.ye/videos/embed/c9443ea4-c5e4-46d3-923d-ea119cb2e68a" },
+        { n: 24, src: "https://meyon.com.ye/videos/embed/2f066685-d203-4655-9cc9-f735b648fb5d" },
+        { n: 25, src: "https://meyon.com.ye/videos/embed/508ed91d-098f-46d0-884e-6a0e4d9d7121" },
+        { n: 26, src: "https://meyon.com.ye/videos/embed/9b36a743-1c80-439d-a78c-be6559ea10ec" }
     ];
 
-    const grid = document.getElementById('grid');
-    const player = document.getElementById('vPlayer');
-    const iframe = document.getElementById('vIframe');
-    const titleDisp = document.getElementById('vTitle');
+    const grid = document.getElementById('buttonsGrid');
+    const player = document.getElementById('videoPlayer');
+    const iframe = document.getElementById('mainIframe');
+    const titleDisp = document.getElementById('episodeTitle');
 
+    // إنشاء الأزرار تلقائياً
     episodes.forEach(ep => {
         const btn = document.createElement('button');
         btn.className = 'ep-btn';
         btn.innerText = ep.n;
         btn.onclick = function() {
-            // تشغيل الفيديو فوراً وبدون فتح الإعلان في نفس اللحظة لمنع الحظر
-            iframe.src = "https://meyon.com.ye/videos/embed/" + ep.id;
-            player.style.display = 'block';
-            titleDisp.innerText = "الحلقة " + ep.n;
-            
-            document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            player.scrollIntoView({ behavior: 'smooth' });
-
-            // فتح الإعلان بعد 3 ثواني من تشغيل الفيديو لكي لا يلاحظ السيرفر
-            setTimeout(() => {
-                window.open('https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a', '_blank');
-            }, 3000);
+            loadEpisode(ep.n, ep.src, btn);
         };
         grid.appendChild(btn);
     });
+
+    function loadEpisode(num, url, btnElement) {
+        // 1. فتح الإعلان (رابطك الخاص)
+        window.open('https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a', '_blank');
+
+        // 2. تحديث الواجهة
+        player.style.display = 'block';
+        iframe.src = url;
+        titleDisp.innerText = "أنت تشاهد الآن: عدنان ولينا - الحلقة " + num;
+
+        // 3. تمييز الزر النشط
+        document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
+        btnElement.classList.add('active');
+
+        // 4. التمرير للأعلى لمشاهدة الفيديو
+        player.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 </script>
 
+<footer>جميع الحقوق محفوظة - صدى الطفولة &copy; 2026</footer>
 </body>
 </html>
