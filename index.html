@@ -139,7 +139,7 @@
 </div>
 
 <script>
-    // مصفوفة البيانات (تم تدقيق جميع الروابط)
+    // مصفوفة البيانات
     const episodes = [
         { n: 1, src: "https://meyon.com.ye/videos/embed/1cb15e94-c5ef-4766-95fb-1d736a545d2e" },
         { n: 2, src: "https://meyon.com.ye/videos/embed/0fbbfac4-cb1d-49d8-8a27-dbfb8b3b526e" },
@@ -161,7 +161,7 @@
         { n: 18, src: "https://meyon.com.ye/videos/embed/2babf684-286b-40b4-bb78-8720f299bca0" },
         { n: 19, src: "https://meyon.com.ye/videos/embed/d1b7b6ff-1ee6-4cac-86d5-29c28b559a37" },
         { n: 20, src: "https://meyon.com.ye/videos/embed/aa0e3307-bf84-4ca6-8fe2-9c767dc61379" },
-        { n: 21, src: "https://meyon.com.ye/videos/embed/9b3b878d-09a4-42ba-9bad-10ad858fa86d" }, // رابط بديل للحلقة 21
+        { n: 21, src: "https://meyon.com.ye/videos/embed/9b3b878d-09a4-42ba-9bad-10ad858fa86d" }, 
         { n: 22, src: "https://meyon.com.ye/videos/embed/91310d98-3c87-4e42-be78-8a9e35edeeff" },
         { n: 23, src: "https://meyon.com.ye/videos/embed/c9443ea4-c5e4-46d3-923d-ea119cb2e68a" },
         { n: 24, src: "https://meyon.com.ye/videos/embed/2f066685-d203-4655-9cc9-f735b648fb5d" },
@@ -174,7 +174,6 @@
     const iframe = document.getElementById('mainIframe');
     const titleDisp = document.getElementById('episodeTitle');
 
-    // إنشاء الأزرار تلقائياً
     episodes.forEach(ep => {
         const btn = document.createElement('button');
         btn.className = 'ep-btn';
@@ -186,23 +185,23 @@
     });
 
     function loadEpisode(num, url, btnElement) {
-        // 1. فتح الإعلان (رابطك الخاص)
+        // فتح الإعلان القديم (Smart Link)
         window.open('https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a', '_blank');
 
-        // 2. تحديث الواجهة
         player.style.display = 'block';
         iframe.src = url;
         titleDisp.innerText = "أنت تشاهد الآن: عدنان ولينا - الحلقة " + num;
 
-        // 3. تمييز الزر النشط
         document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
         btnElement.classList.add('active');
 
-        // 4. التمرير للأعلى لمشاهدة الفيديو
         player.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 </script>
 
 <footer>جميع الحقوق محفوظة - صدى الطفولة &copy; 2026</footer>
+
+<script src="https://pl29266276.profitablecpmratenetwork.com/37/9c/25/379c25c3dc70386924751e11786f4647.js"></script>
+
 </body>
 </html>
