@@ -14,7 +14,7 @@
         .responsive-iframe { position: relative; padding-bottom: 56.25%; height: 0; }
         .responsive-iframe iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 15px; background: var(--card); padding: 25px; border-radius: 20px; }
-        .ep-btn { background: #252f44; color: white; border: 2px solid transparent; padding: 15px 0; border-radius: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; }
+        .ep-btn { background: #252f44; color: white; border: 2px solid transparent; padding: 15px 0; border-radius: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.2s; }
         .ep-btn.active { background: var(--accent); color: black; }
         footer { margin-top: 50px; padding: 20px; opacity: 0.4; }
     </style>
@@ -23,7 +23,7 @@
 
 <header>
     <h1>🎬 صدى الطفولة</h1>
-    <p>اختر رقم الحلقة وابدأ المشاهدة فوراً</p>
+    <p>شاهد مغامرات عدنان ولينا بجودة عالية</p>
 </header>
 
 <div class="main-container">
@@ -31,9 +31,9 @@
         <div class="responsive-iframe">
             <iframe id="mainIframe" src="" allowfullscreen></iframe>
         </div>
-        <div id="episodeTitle" style="padding: 10px; background: var(--card);"></div>
+        <div id="episodeTitle" style="padding: 10px; background: var(--card); font-weight: bold;"></div>
     </div>
-    <h2>اضغط على رقم الحلقة للمشاهدة:</h2>
+    <h2>اختر الحلقة:</h2>
     <div class="episodes-grid" id="buttonsGrid"></div>
 </div>
 
@@ -81,21 +81,18 @@
     });
 
     function loadEpisode(num, url, btnElement) {
-        // نكتفي بفتح الإعلان التلقائي عند اللمس، وهنا نركز على تشغيل الفيديو
+        // تشغيل الفيديو فوراً وبدون أي تدخل إعلاني يدوي لضمان السرعة
         player.style.display = 'block';
         iframe.src = url;
-        titleDisp.innerText = "أنت تشاهد الآن: عدنان ولينا - الحلقة " + num;
+        titleDisp.innerText = "أنت تشاهد الآن: الحلقة " + num;
 
         document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
         btnElement.classList.add('active');
         player.scrollIntoView({ behavior: 'smooth' });
-
-        // نفتح الإعلان القديم في نافذة خلفية لتقليل التعارض
-        setTimeout(function() {
-            window.open('https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a', '_blank');
-        }, 100);
     }
 </script>
+
+<footer>جميع الحقوق محفوظة - صدى الطفولة &copy; 2026</footer>
 
 <script src="https://pl29266276.profitablecpmratenetwork.com/37/9c/25/379c25c3dc70386924751e11786f4647.js"></script>
 
