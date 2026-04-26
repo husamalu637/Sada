@@ -8,17 +8,15 @@
     <style>
         :root { --primary: #00d2ff; --accent: #ff9800; --bg: #0b0f19; --card: #161e2e; }
         body { background-color: var(--bg); color: white; font-family: 'Cairo', sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { width: 100%; background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 40px 0; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        header { width: 100%; background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 40px 0; text-align: center; }
         .main-container { max-width: 900px; width: 95%; margin: 20px auto; text-align: center; }
-        .video-display-area { background: #000; border-radius: 20px; overflow: hidden; border: 3px solid var(--primary); box-shadow: 0 0 30px rgba(0, 210, 255, 0.2); margin-bottom: 30px; display: none; position: relative; }
+        .video-display-area { background: #000; border-radius: 20px; overflow: hidden; border: 3px solid var(--primary); margin-bottom: 30px; display: none; }
         .responsive-iframe { position: relative; padding-bottom: 56.25%; height: 0; }
         .responsive-iframe iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 15px; background: var(--card); padding: 25px; border-radius: 20px; }
-        .ep-btn { background: #252f44; color: white; border: 2px solid transparent; padding: 15px 0; border-radius: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .ep-btn:hover { background: var(--primary); transform: scale(1.1); border-color: white; }
-        .ep-btn.active { background: var(--accent); color: black; box-shadow: 0 0 15px var(--accent); }
-        .info-text { margin-top: 20px; color: var(--primary); font-size: 1.1rem; }
-        footer { margin-top: 50px; padding: 20px; opacity: 0.4; font-size: 0.8rem; }
+        .ep-btn { background: #252f44; color: white; border: 2px solid transparent; padding: 15px 0; border-radius: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; }
+        .ep-btn.active { background: var(--accent); color: black; }
+        footer { margin-top: 50px; padding: 20px; opacity: 0.4; }
     </style>
 </head>
 <body>
@@ -31,13 +29,12 @@
 <div class="main-container">
     <div id="videoPlayer" class="video-display-area">
         <div class="responsive-iframe">
-            <iframe id="mainIframe" src="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-forms allow-presentation"></iframe>
+            <iframe id="mainIframe" src="" allowfullscreen></iframe>
         </div>
-        <div id="episodeTitle" style="padding: 10px; background: var(--card); font-weight: bold;"></div>
+        <div id="episodeTitle" style="padding: 10px; background: var(--card);"></div>
     </div>
-    <h2 id="status-msg">اضغط على رقم الحلقة للمشاهدة:</h2>
+    <h2>اضغط على رقم الحلقة للمشاهدة:</h2>
     <div class="episodes-grid" id="buttonsGrid"></div>
-    <p class="info-text">جميع الحلقات الـ 26 متوفرة الآن بجودة عالية</p>
 </div>
 
 <script>
@@ -84,20 +81,21 @@
     });
 
     function loadEpisode(num, url, btnElement) {
-        // فتح الإعلان القديم في نافذة جديدة
-        window.open('https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a', '_blank');
-
+        // نكتفي بفتح الإعلان التلقائي عند اللمس، وهنا نركز على تشغيل الفيديو
         player.style.display = 'block';
         iframe.src = url;
         titleDisp.innerText = "أنت تشاهد الآن: عدنان ولينا - الحلقة " + num;
 
         document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
         btnElement.classList.add('active');
-        player.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        player.scrollIntoView({ behavior: 'smooth' });
+
+        // نفتح الإعلان القديم في نافذة خلفية لتقليل التعارض
+        setTimeout(function() {
+            window.open('https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a', '_blank');
+        }, 100);
     }
 </script>
-
-<footer>جميع الحقوق محفوظة - صدى الطفولة &copy; 2026</footer>
 
 <script src="https://pl29266276.profitablecpmratenetwork.com/37/9c/25/379c25c3dc70386924751e11786f4647.js"></script>
 
