@@ -21,51 +21,24 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 50px;
         }
 
         header {
             width: 100%;
             background: linear-gradient(135deg, #00d2ff, #3a7bd5);
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
-
-        .tabs-container {
-            display: flex;
-            gap: 10px;
-            margin: 25px 0;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .tab-btn {
-            background: var(--card);
-            color: white;
-            border: 2px solid var(--primary);
-            padding: 12px 25px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-            font-size: 1rem;
-        }
-
-        .tab-btn.active {
-            background: var(--primary);
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
-            color: #000;
         }
 
         .main-container {
             max-width: 900px;
             width: 95%;
-            margin: 0 auto;
+            margin: 20px auto;
             text-align: center;
         }
 
-        /* منطقة المشغل */
+        /* منطقة مشغل الفيديو */
         .video-display-area {
             background: #000;
             border-radius: 20px;
@@ -90,37 +63,16 @@
             border: 0;
         }
 
-        .now-playing {
-            padding: 15px;
-            background: #161e2e;
-            color: var(--primary);
-            font-weight: bold;
-            border-top: 1px solid #252f44;
-        }
-
-        /* شبكة الحلقات */
-        .episodes-section {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-
-        .episodes-section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        /* شبكة أزرار الحلقات */
         .episodes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 15px;
             background: var(--card);
-            padding: 20px;
+            padding: 25px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 40px;
         }
 
         .ep-btn {
@@ -129,15 +81,16 @@
             border: 2px solid transparent;
             padding: 15px 0;
             border-radius: 12px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.3s;
         }
 
         .ep-btn:hover {
             background: var(--primary);
-            transform: scale(1.05);
+            transform: scale(1.1);
+            border-color: white;
         }
 
         .ep-btn.active {
@@ -146,150 +99,77 @@
             box-shadow: 0 0 15px var(--accent);
         }
 
-        .ad-banner {
-            width: 100%;
-            max-width: 728px;
-            background: #1a2233;
-            border: 1px dashed #444;
-            margin: 20px 0;
-            padding: 15px;
-            border-radius: 10px;
-            color: #888;
+        h2 {
+            color: var(--accent);
+            margin: 30px 0 15px 0;
+            border-right: 5px solid var(--primary);
+            padding-right: 15px;
+            text-align: right;
         }
-
-        h2 { color: var(--accent); margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 style="margin:0; font-size: 2.5rem; font-weight: 900;">صـدى الطفـولة</h1>
-    <p style="margin:5px 0 0 0; opacity: 0.9;">أجمل مسلسلات الكرتون بجودة عالية</p>
+    <h1>صـدى الطفـولة</h1>
+    <p>أجمل ذكريات الكرتون العربي</p>
 </header>
 
 <div class="main-container">
     
-    <div class="tabs-container">
-        <button class="tab-btn active" onclick="showSeries('adnana')">عدنان ولينا</button>
-        <button class="tab-btn" onclick="showSeries('robin')">روبن هود</button>
-        <button class="tab-btn" onclick="showSeries('grendizer')">جريندايزر</button>
-    </div>
-
-    <div id="videoPlayerArea" class="video-display-area">
+    <div id="videoArea" class="video-display-area">
         <div class="responsive-iframe">
-            <iframe id="mainPlayer" src="" allowfullscreen></iframe>
+            <iframe id="videoPlayer" src="" allowfullscreen></iframe>
         </div>
-        <div id="nowPlayingTitle" class="now-playing"></div>
+        <div id="videoTitle" style="padding: 10px; background: #161e2e; color: var(--primary);"></div>
     </div>
 
-    <div class="ad-banner">
-        إعلان مفعل - ضع كود شركتك الإعلانية هنا
-    </div>
+    <h2>مغامرات عدنان ولينا</h2>
+    <div class="episodes-grid">
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا - حلقة 1', this)">1</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا - حلقة 2', this)">2</button>
+        </div>
 
-    <div id="adnana" class="episodes-section active">
-        <h2>مغامرات عدنان ولينا</h2>
-        <div class="episodes-grid" id="grid-adnana"></div>
-    </div>
+    <h2>روبن هود: السهم الناري</h2>
+    <div class="episodes-grid">
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/13f60796-d3ff-4592-a50e-2d063f36c3c7', 'روبن هود - حلقة 39', this)">39</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/a88a04f9-260f-49af-beed-e7997b3e9b44', 'روبن هود - حلقة 40', this)">40</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/a5bebf0e-5ca3-4dec-bf48-a1da52d32334', 'روبن هود - حلقة 41', this)">41</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/9396b996-61a1-43dc-9353-0c4bc5f3dbbc', 'روبن هود - حلقة 42', this)">42</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/1c590a49-4ad1-42ae-a733-c2e7a164d76a', 'روبن هود - حلقة 45', this)">45</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/1dc50eb5-2698-4992-a93b-302e9eb5f71c', 'روبن هود - حلقة 52 الأخيرة', this)">52</button>
+        </div>
 
-    <div id="robin" class="episodes-section">
-        <h2>روبن هود: السهم الناري</h2>
-        <div class="episodes-grid" id="grid-robin"></div>
-    </div>
-
-    <div id="grendizer" class="episodes-section">
-        <h2>مغامرات الفضاء: جريندايزر</h2>
-        <div class="episodes-grid" id="grid-grendizer"></div>
-    </div>
+    <h2>مغامرات الفضاء: جريندايزر</h2>
+    <div class="episodes-grid">
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر - حلقة 1', this)">1</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر - حلقة 2', this)">2</button>
+        </div>
 
 </div>
 
 <script>
-    // قاعدة بيانات الحلقات
-    const seriesData = {
-        adnana: {
-            title: "عدنان ولينا",
-            baseUrl: "https://meyon.com.ye/videos/embed/",
-            count: 26,
-            ids: ["02f3...", "02f3...", "02f3..."] // أكمل إضافة الـ IDs الخاصة بك هنا
-        },
-        robin: {
-            title: "روبن هود",
-            baseUrl: "https://meyon.com.ye/videos/embed/",
-            count: 52,
-            ids: Array(38).fill("placeholder").concat([
-                "13f60796-d3ff-4592-a50e-2d063f36c3c7", // 39
-                "a88a04f9-260f-49af-beed-e7997b3e9b44", // 40
-                "a5bebf0e-5ca3-4dec-bf48-a1da52d32334", // 41
-                "9396b996-61a1-43dc-9353-0c4bc5f3dbbc", // 42
-                "placeholder", // 43 (أضف الـ ID هنا)
-                "placeholder", // 44 (أضف الـ ID هنا)
-                "1c590a49-4ad1-42ae-a733-c2e7a164d76a", // 45
-                "f59cc0ce-dfe5-4e87-b796-e8e445f2df63", // 46
-                "fbe871a7-22b1-4b3e-a025-677786dae114", // 47
-                "65814fcc-bd76-4fc5-94cc-a493cd023b0b", // 48
-                "ed0c0af5-5e93-4314-83ce-1b4fa8538e9f", // 49
-                "07ba6fc0-119d-41d6-bbcf-0f5994e45a27", // 50
-                "6be8d54d-4317-4bd2-9539-5dd2e27c4f8b", // 51
-                "1dc50eb5-2698-4992-a93b-302e9eb5f71c"  // 52
-            ])
-        },
-        grendizer: {
-            title: "جريندايزر",
-            baseUrl: "https://meyon.com.ye/videos/embed/",
-            count: 40,
-            ids: [] // أضف الـ IDs الخاصة بجريندايزر هنا
-        }
-    };
+    function playVideo(url, title, btn) {
+        // تفعيل المشغل
+        const area = document.getElementById('videoArea');
+        const player = document.getElementById('videoPlayer');
+        const titleDiv = document.getElementById('videoTitle');
 
-    // تبديل المسلسلات
-    function showSeries(seriesId) {
-        document.querySelectorAll('.episodes-section').forEach(s => s.classList.remove('active'));
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        
-        document.getElementById(seriesId).classList.add('active');
-        event.currentTarget.classList.add('active');
-    }
+        area.style.display = 'block';
+        player.src = url;
+        titleDiv.innerText = "أنت تشاهد الآن: " + title;
 
-    // إنشاء الأزرار
-    function init() {
-        for (let series in seriesData) {
-            const grid = document.getElementById(`grid-${series}`);
-            for (let i = 1; i <= seriesData[series].count; i++) {
-                const btn = document.createElement('button');
-                btn.className = 'ep-btn';
-                btn.innerText = i;
-                btn.onclick = (e) => playVideo(series, i, seriesData[series].ids[i-1], e);
-                grid.appendChild(btn);
-            }
-        }
-    }
-
-    // تشغيل الفيديو ونظام الإعلانات
-    function playVideo(seriesKey, epNum, videoId, event) {
-        if (!videoId || videoId === "placeholder") {
-            alert("رابط هذه الحلقة سيتم إضافته قريباً!");
-            return;
-        }
-
-        const playerArea = document.getElementById('videoPlayerArea');
-        const iframe = document.getElementById('mainPlayer');
-        const titleLabel = document.getElementById('nowPlayingTitle');
-
-        // فتح إعلان في نافذة جديدة (Pop-under)
+        // نظام الإعلانات (يفتح عند الضغط على الحلقة)
         window.open('https://your-ad-link.com', '_blank');
 
-        // تحديث المشغل
-        playerArea.style.display = 'block';
-        iframe.src = seriesData[seriesKey].baseUrl + videoId;
-        titleLabel.innerText = `أنت تشاهد الآن: ${seriesData[seriesKey].title} - الحلقة ${epNum}`;
+        // تمييز الزر النشط
+        const btns = document.getElementsByClassName('ep-btn');
+        for(let b of btns) { b.classList.remove('active'); }
+        btn.classList.add('active');
 
-        // تمييز الزر والتمرير
-        document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
-        event.target.classList.add('active');
-        playerArea.scrollIntoView({ behavior: 'smooth' });
+        // تمرير للمشغل
+        area.scrollIntoView({ behavior: 'smooth' });
     }
-
-    window.onload = init;
 </script>
 
 </body>
