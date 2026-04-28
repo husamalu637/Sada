@@ -6,86 +6,102 @@
     <title>صدى الطفولة | عدنان ولينا</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;900&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #00d2ff; --accent: #ff9800; --bg: #0b0f19; --card: #161e2e; }
-        body { background-color: var(--bg); color: white; font-family: 'Cairo', sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { width: 100%; background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 40px 0; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        .main-container { max-width: 900px; width: 95%; margin: 20px auto; text-align: center; }
-        .video-display-area { background: #000; border-radius: 20px; overflow: hidden; border: 3px solid var(--primary); margin-bottom: 30px; display: none; position: relative; }
-        .responsive-iframe { position: relative; padding-bottom: 56.25%; height: 0; }
-        .responsive-iframe iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 15px; background: var(--card); padding: 25px; border-radius: 20px; margin-bottom: 40px; }
-        .ep-btn { background: #252f44; color: white; border: 2px solid transparent; padding: 15px 0; border-radius: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .ep-btn:hover { background: var(--primary); transform: scale(1.1); }
-        .ep-btn.active { background: var(--accent); color: black; }
-        h2 { color: var(--accent); margin: 30px 0 15px 0; border-right: 5px solid var(--primary); padding-right: 15px; text-align: right; }
-    </style>
-</head>
-<body>
+        :root {
+            --primary: #00d2ff;
+            --accent: #ff9800;
+            --bg: #0b0f19;
+            --card: #161e2e;
+        }
 
-<header>
-    <h1>صـدى الطفـولة</h1>
-</header>
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-<div class="main-container">
-    <div id="videoArea" class="video-display-area">
-        <div class="responsive-iframe"><iframe id="videoPlayer" src="" allowfullscreen></iframe></div>
-        <div id="videoTitle" style="padding: 10px; background: #161e2e; color: var(--primary); font-weight: bold;"></div>
-    </div>
+        header {
+            width: 100%;
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
 
-    <h2>مغامرات عدنان ولينا</h2>
-    <div class="episodes-grid">
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/70be2c75-4f36-4d2c-8069-58673752e505', 'عدنان ولينا 1', this)">1</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/69a03683-1627-4a0b-9366-2675973e659b', 'عدنان ولينا 2', this)">2</button>
-        
-        <button class="ep-btn" onclick="playVideo('', '3', this)">3</button>
-        <button class="ep-btn" onclick="playVideo('', '4', this)">4</button>
-        <button class="ep-btn" onclick="playVideo('', '5', this)">5</button>
-        <button class="ep-btn" onclick="playVideo('', '6', this)">6</button>
-        <button class="ep-btn" onclick="playVideo('', '7', this)">7</button>
-        <button class="ep-btn" onclick="playVideo('', '8', this)">8</button>
-        <button class="ep-btn" onclick="playVideo('', '9', this)">9</button>
-        <button class="ep-btn" onclick="playVideo('', '10', this)">10</button>
-        <button class="ep-btn" onclick="playVideo('', '11', this)">11</button>
-        <button class="ep-btn" onclick="playVideo('', '12', this)">12</button>
-        <button class="ep-btn" onclick="playVideo('', '13', this)">13</button>
-        <button class="ep-btn" onclick="playVideo('', '14', this)">14</button>
-        <button class="ep-btn" onclick="playVideo('', '15', this)">15</button>
-        <button class="ep-btn" onclick="playVideo('', '16', this)">16</button>
-        <button class="ep-btn" onclick="playVideo('', '17', this)">17</button>
-        <button class="ep-btn" onclick="playVideo('', '18', this)">18</button>
-        <button class="ep-btn" onclick="playVideo('', '19', this)">19</button>
-        <button class="ep-btn" onclick="playVideo('', '20', this)">20</button>
-        <button class="ep-btn" onclick="playVideo('', '21', this)">21</button>
-        <button class="ep-btn" onclick="playVideo('', '22', this)">22</button>
-        <button class="ep-btn" onclick="playVideo('', '23', this)">23</button>
-        <button class="ep-btn" onclick="playVideo('', '24', this)">24</button>
-        <button class="ep-btn" onclick="playVideo('', '25', this)">25</button>
-        <button class="ep-btn" onclick="playVideo('', '26', this)">26</button>
-    </div>
-</div>
+        .main-container {
+            max-width: 900px;
+            width: 95%;
+            margin: 20px auto;
+            text-align: center;
+        }
 
-<script>
-    function playVideo(url, title, btn) {
-        if(!url) { alert("هذه الحلقة سيتم إضافتها قريباً"); return; }
-        
-        // فتح الإعلان (استبدل الرابط برابط إعلانك)
-        window.open('https://your-ad-link.com', '_blank');
+        /* منطقة مشغل الفيديو */
+        .video-display-area {
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+            margin-bottom: 30px;
+            display: none; /* يظهر عند النقر فقط */
+            position: relative;
+        }
 
-        const area = document.getElementById('videoArea');
-        const player = document.getElementById('videoPlayer');
-        const titleDiv = document.getElementById('videoTitle');
+        .responsive-iframe {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
 
-        area.style.display = 'block';
-        player.src = url;
-        titleDiv.innerText = "أنت تشاهد الآن: حلقة " + title;
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
-        const btns = document.getElementsByClassName('ep-btn');
-        for(let b of btns) { b.classList.remove('active'); }
-        btn.classList.add('active');
+        /* شبكة أزرار الحلقات */
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 15px;
+            background: var(--card);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
 
-        area.scrollIntoView({ behavior: 'smooth' });
-    }
-</script>
+        .ep-btn {
+            background: #252f44;
+            color: white;
+            border: 2px solid transparent;
+            padding: 15px 0;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-</body>
-</html>
+        .ep-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+            border-color: white;
+        }
+
+        .ep-btn.active {
+            background: var(--accent);
+            color: black;
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        .info-text {
+            margin-top: 20px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
