@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صدى الطفولة | أرشيف الكرتون العالمي</title>
+    <title>صدى الطفولة | أرشيف الكرتون</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -11,7 +11,6 @@
             --accent: #ff9800;
             --bg: #0b0f19;
             --card: #161e2e;
-            --success: #4caf50;
         }
 
         body {
@@ -36,7 +35,7 @@
         .tabs-container {
             display: flex;
             gap: 10px;
-            margin: 20px 0;
+            margin: 25px 0;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -45,20 +44,22 @@
             background: var(--card);
             color: white;
             border: 2px solid var(--primary);
-            padding: 10px 25px;
+            padding: 12px 25px;
             border-radius: 30px;
             cursor: pointer;
             font-weight: bold;
             transition: 0.3s;
+            font-size: 1rem;
         }
 
         .tab-btn.active {
             background: var(--primary);
-            box-shadow: 0 0 15px var(--primary);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+            color: #000;
         }
 
         .main-container {
-            max-width: 1000px;
+            max-width: 900px;
             width: 95%;
             margin: 0 auto;
             text-align: center;
@@ -89,18 +90,32 @@
             border: 0;
         }
 
+        .now-playing {
+            padding: 15px;
+            background: #161e2e;
+            color: var(--primary);
+            font-weight: bold;
+            border-top: 1px solid #252f44;
+        }
+
         /* شبكة الحلقات */
         .episodes-section {
             display: none;
+            animation: fadeIn 0.5s;
         }
 
         .episodes-section.active {
             display: block;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .episodes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
             gap: 12px;
             background: var(--card);
             padding: 20px;
@@ -112,8 +127,8 @@
             background: #252f44;
             color: white;
             border: 2px solid transparent;
-            padding: 12px 0;
-            border-radius: 10px;
+            padding: 15px 0;
+            border-radius: 12px;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
@@ -122,33 +137,34 @@
 
         .ep-btn:hover {
             background: var(--primary);
-            transform: translateY(-3px);
+            transform: scale(1.05);
         }
 
         .ep-btn.active {
             background: var(--accent);
             color: black;
+            box-shadow: 0 0 15px var(--accent);
         }
 
-        /* مساحة الإعلانات */
-        .ad-space {
+        .ad-banner {
+            width: 100%;
+            max-width: 728px;
             background: #1a2233;
             border: 1px dashed #444;
-            margin: 15px 0;
-            padding: 10px;
-            min-height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            color: #888;
         }
+
+        h2 { color: var(--accent); margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>صـدى الطفـولة</h1>
-    <p>بوابتك لذكريات الزمن الجميل</p>
+    <h1 style="margin:0; font-size: 2.5rem; font-weight: 900;">صـدى الطفـولة</h1>
+    <p style="margin:5px 0 0 0; opacity: 0.9;">أجمل مسلسلات الكرتون بجودة عالية</p>
 </header>
 
 <div class="main-container">
@@ -163,54 +179,50 @@
         <div class="responsive-iframe">
             <iframe id="mainPlayer" src="" allowfullscreen></iframe>
         </div>
-        <h3 id="nowPlayingTitle" style="padding: 10px; margin: 0; background: #161e2e; color: var(--primary);"></h3>
+        <div id="nowPlayingTitle" class="now-playing"></div>
     </div>
 
-    <div class="ad-space">
-        <p>إعلان مفعل</p>
+    <div class="ad-banner">
+        إعلان مفعل - ضع كود شركتك الإعلانية هنا
     </div>
 
     <div id="adnana" class="episodes-section active">
-        <h2 style="color: var(--accent);">مغامرات عدنان ولينا</h2>
-        <div class="episodes-grid" id="grid-adnana">
-            </div>
+        <h2>مغامرات عدنان ولينا</h2>
+        <div class="episodes-grid" id="grid-adnana"></div>
     </div>
 
     <div id="robin" class="episodes-section">
-        <h2 style="color: var(--accent);">روبن هود: السهم الناري</h2>
-        <div class="episodes-grid" id="grid-robin">
-            </div>
+        <h2>روبن هود: السهم الناري</h2>
+        <div class="episodes-grid" id="grid-robin"></div>
     </div>
 
     <div id="grendizer" class="episodes-section">
-        <h2 style="color: var(--accent);">مغامرات الفضاء: جريندايزر</h2>
-        <div class="episodes-grid" id="grid-grendizer">
-            </div>
+        <h2>مغامرات الفضاء: جريندايزر</h2>
+        <div class="episodes-grid" id="grid-grendizer"></div>
     </div>
 
 </div>
 
 <script>
-    // بيانات الروابط (أضفت لك روبن هود كاملة وجريندايزر كما طلبت)
+    // قاعدة بيانات الحلقات
     const seriesData = {
         adnana: {
             title: "عدنان ولينا",
             baseUrl: "https://meyon.com.ye/videos/embed/",
             count: 26,
-            ids: ["02f3...", "إلخ"] // ضع هنا معرفات عدنان ولينا الخاصة بك
+            ids: ["02f3...", "02f3...", "02f3..."] // أكمل إضافة الـ IDs الخاصة بك هنا
         },
         robin: {
             title: "روبن هود",
             baseUrl: "https://meyon.com.ye/videos/embed/",
             count: 52,
-            // قمت بتجهيز المعرفات بناءً على ما أرسلته سابقاً
-            ids: [
-                "b1c1d1...", // حلقة 1
-                // ... بقية الـ 52 حلقة
+            ids: Array(38).fill("placeholder").concat([
                 "13f60796-d3ff-4592-a50e-2d063f36c3c7", // 39
                 "a88a04f9-260f-49af-beed-e7997b3e9b44", // 40
                 "a5bebf0e-5ca3-4dec-bf48-a1da52d32334", // 41
                 "9396b996-61a1-43dc-9353-0c4bc5f3dbbc", // 42
+                "placeholder", // 43 (أضف الـ ID هنا)
+                "placeholder", // 44 (أضف الـ ID هنا)
                 "1c590a49-4ad1-42ae-a733-c2e7a164d76a", // 45
                 "f59cc0ce-dfe5-4e87-b796-e8e445f2df63", // 46
                 "fbe871a7-22b1-4b3e-a025-677786dae114", // 47
@@ -219,17 +231,17 @@
                 "07ba6fc0-119d-41d6-bbcf-0f5994e45a27", // 50
                 "6be8d54d-4317-4bd2-9539-5dd2e27c4f8b", // 51
                 "1dc50eb5-2698-4992-a93b-302e9eb5f71c"  // 52
-            ]
+            ])
         },
         grendizer: {
             title: "جريندايزر",
             baseUrl: "https://meyon.com.ye/videos/embed/",
             count: 40,
-            ids: [] // يتم تعبئتها بـ IDs جريندايزر
+            ids: [] // أضف الـ IDs الخاصة بجريندايزر هنا
         }
     };
 
-    // وظيفة تبديل الأقسام
+    // تبديل المسلسلات
     function showSeries(seriesId) {
         document.querySelectorAll('.episodes-section').forEach(s => s.classList.remove('active'));
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -238,49 +250,46 @@
         event.currentTarget.classList.add('active');
     }
 
-    // توليد الأزرار تلقائياً
-    function generateButtons() {
+    // إنشاء الأزرار
+    function init() {
         for (let series in seriesData) {
             const grid = document.getElementById(`grid-${series}`);
             for (let i = 1; i <= seriesData[series].count; i++) {
                 const btn = document.createElement('button');
                 btn.className = 'ep-btn';
                 btn.innerText = i;
-                btn.onclick = () => playVideo(series, i, seriesData[series].ids[i-1]);
+                btn.onclick = (e) => playVideo(series, i, seriesData[series].ids[i-1], e);
                 grid.appendChild(btn);
             }
         }
     }
 
-    // وظيفة تشغيل الفيديو مع نظام الإعلانات
-    function playVideo(seriesName, epNum, videoId) {
+    // تشغيل الفيديو ونظام الإعلانات
+    function playVideo(seriesKey, epNum, videoId, event) {
+        if (!videoId || videoId === "placeholder") {
+            alert("رابط هذه الحلقة سيتم إضافته قريباً!");
+            return;
+        }
+
         const playerArea = document.getElementById('videoPlayerArea');
         const iframe = document.getElementById('mainPlayer');
-        const title = document.getElementById('nowPlayingTitle');
-        
-        // تفعيل المشغل
+        const titleLabel = document.getElementById('nowPlayingTitle');
+
+        // فتح إعلان في نافذة جديدة (Pop-under)
+        window.open('https://your-ad-link.com', '_blank');
+
+        // تحديث المشغل
         playerArea.style.display = 'block';
-        
-        // تحديث الرابط (هنا يتم دمج معرف الفيديو)
-        // ملاحظة: إذا لم تتوفر كل الـ IDs حالياً، سيتم وضع رابط تجريبي
-        const finalId = videoId || "placeholder"; 
-        iframe.src = seriesData[seriesName].baseUrl + finalId;
-        
-        title.innerText = `جاري عرض: ${seriesData[seriesName].title} - الحلقة ${epNum}`;
+        iframe.src = seriesData[seriesKey].baseUrl + videoId;
+        titleLabel.innerText = `أنت تشاهد الآن: ${seriesData[seriesKey].title} - الحلقة ${epNum}`;
 
-        // نظام الإعلانات: فتح إعلان في نافذة جديدة عند كل نقرة (Pop-under logic)
-        // يمكنك استبدال الرابط برابط شركتك الإعلانية
-        window.open('https://www.your-ad-link.com', '_blank');
-
-        // التمرير للمشغل تلقائياً
-        playerArea.scrollIntoView({ behavior: 'smooth' });
-
-        // تمييز الزر النشط
+        // تمييز الزر والتمرير
         document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
         event.target.classList.add('active');
+        playerArea.scrollIntoView({ behavior: 'smooth' });
     }
 
-    window.onload = generateButtons;
+    window.onload = init;
 </script>
 
 </body>
