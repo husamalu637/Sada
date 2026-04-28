@@ -3,183 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صدى الطفولة | أرشيف الكرتون</title>
+    <title>صدى الطفولة</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #00d2ff;
-            --accent: #ff9800;
-            --bg: #0b0f19;
-            --card: #161e2e;
-        }
+        :root { --primary: #00d2ff; --accent: #ff9800; --bg: #0b0f19; --card: #161e2e; }
         body { background-color: var(--bg); color: white; font-family: 'Cairo', sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
         header { width: 100%; background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 40px 0; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
         .main-container { max-width: 900px; width: 95%; margin: 20px auto; text-align: center; }
-        .video-display-area { background: #000; border-radius: 20px; overflow: hidden; border: 3px solid var(--primary); box-shadow: 0 0 30px rgba(0, 210, 255, 0.2); margin-bottom: 30px; display: none; position: relative; }
+        .video-display-area { background: #000; border-radius: 20px; overflow: hidden; border: 3px solid var(--primary); margin-bottom: 30px; display: none; position: relative; }
         .responsive-iframe { position: relative; padding-bottom: 56.25%; height: 0; }
         .responsive-iframe iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 15px; background: var(--card); padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-bottom: 40px; }
+        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 15px; background: var(--card); padding: 25px; border-radius: 20px; margin-bottom: 40px; }
         .ep-btn { background: #252f44; color: white; border: 2px solid transparent; padding: 15px 0; border-radius: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .ep-btn:hover { background: var(--primary); transform: scale(1.1); border-color: white; }
-        .ep-btn.active { background: var(--accent); color: black; box-shadow: 0 0 15px var(--accent); }
+        .ep-btn:hover { background: var(--primary); transform: scale(1.1); }
+        .ep-btn.active { background: var(--accent); color: black; }
         h2 { color: var(--accent); margin: 30px 0 15px 0; border-right: 5px solid var(--primary); padding-right: 15px; text-align: right; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>صـدى الطفـولة</h1>
-</header>
+<header><h1>صـدى الطفـولة</h1></header>
 
 <div class="main-container">
     <div id="videoArea" class="video-display-area">
-        <div class="responsive-iframe">
-            <iframe id="videoPlayer" src="" allowfullscreen></iframe>
-        </div>
+        <div class="responsive-iframe"><iframe id="videoPlayer" src="" allowfullscreen></iframe></div>
         <div id="videoTitle" style="padding: 10px; background: #161e2e; color: var(--primary);"></div>
     </div>
 
     <h2>مغامرات عدنان ولينا</h2>
     <div class="episodes-grid">
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 1', this)">1</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 2', this)">2</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 3', this)">3</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 4', this)">4</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 5', this)">5</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 6', this)">6</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 7', this)">7</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 8', this)">8</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 9', this)">9</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 10', this)">10</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 11', this)">11</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 12', this)">12</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 13', this)">13</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 14', this)">14</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 15', this)">15</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 16', this)">16</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 17', this)">17</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 18', this)">18</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 19', this)">19</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 20', this)">20</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 21', this)">21</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 22', this)">22</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 23', this)">23</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 24', this)">24</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 25', this)">25</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'عدنان ولينا 26', this)">26</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/70be2c75-4f36-4d2c-8069-58673752e505', 'عدنان ولينا 1', this)">1</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/69a03683-1627-4a0b-9366-2675973e659b', 'عدنان ولينا 2', this)">2</button>
+        <button class="ep-btn" onclick="playVideo('', '3', this)">3</button><button class="ep-btn" onclick="playVideo('', '4', this)">4</button>
+        <button class="ep-btn" onclick="playVideo('', '5', this)">5</button><button class="ep-btn" onclick="playVideo('', '6', this)">6</button>
+        <button class="ep-btn" onclick="playVideo('', '7', this)">7</button><button class="ep-btn" onclick="playVideo('', '8', this)">8</button>
+        <button class="ep-btn" onclick="playVideo('', '9', this)">9</button><button class="ep-btn" onclick="playVideo('', '10', this)">10</button>
+        <button class="ep-btn" onclick="playVideo('', '11', this)">11</button><button class="ep-btn" onclick="playVideo('', '12', this)">12</button>
+        <button class="ep-btn" onclick="playVideo('', '13', this)">13</button><button class="ep-btn" onclick="playVideo('', '14', this)">14</button>
+        <button class="ep-btn" onclick="playVideo('', '15', this)">15</button><button class="ep-btn" onclick="playVideo('', '16', this)">16</button>
+        <button class="ep-btn" onclick="playVideo('', '17', this)">17</button><button class="ep-btn" onclick="playVideo('', '18', this)">18</button>
+        <button class="ep-btn" onclick="playVideo('', '19', this)">19</button><button class="ep-btn" onclick="playVideo('', '20', this)">20</button>
+        <button class="ep-btn" onclick="playVideo('', '21', this)">21</button><button class="ep-btn" onclick="playVideo('', '22', this)">22</button>
+        <button class="ep-btn" onclick="playVideo('', '23', this)">23</button><button class="ep-btn" onclick="playVideo('', '24', this)">24</button>
+        <button class="ep-btn" onclick="playVideo('', '25', this)">25</button><button class="ep-btn" onclick="playVideo('', '26', this)">26</button>
     </div>
 
     <h2>روبن هود: السهم الناري</h2>
     <div class="episodes-grid">
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 1', this)">1</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 2', this)">2</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 3', this)">3</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 4', this)">4</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 5', this)">5</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 6', this)">6</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 7', this)">7</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 8', this)">8</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 9', this)">9</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 10', this)">10</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 11', this)">11</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 12', this)">12</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 13', this)">13</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 14', this)">14</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 15', this)">15</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 16', this)">16</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 17', this)">17</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 18', this)">18</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 19', this)">19</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 20', this)">20</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 21', this)">21</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 22', this)">22</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 23', this)">23</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 24', this)">24</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 25', this)">25</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 26', this)">26</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 27', this)">27</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 28', this)">28</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 29', this)">29</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 30', this)">30</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 31', this)">31</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 32', this)">32</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 33', this)">33</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 34', this)">34</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 35', this)">35</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 36', this)">36</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 37', this)">37</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 38', this)">38</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/13f60796-d3ff-4592-a50e-2d063f36c3c7', 'روبن هود 39', this)">39</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/a88a04f9-260f-49af-beed-e7997b3e9b44', 'روبن هود 40', this)">40</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/a5bebf0e-5ca3-4dec-bf48-a1da52d32334', 'روبن هود 41', this)">41</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/9396b996-61a1-43dc-9353-0c4bc5f3dbbc', 'روبن هود 42', this)">42</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 43', this)">43</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'روبن هود 44', this)">44</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/1c590a49-4ad1-42ae-a733-c2e7a164d76a', 'روبن هود 45', this)">45</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/f59cc0ce-dfe5-4e87-b796-e8e445f2df63', 'روبن هود 46', this)">46</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/fbe871a7-22b1-4b3e-a025-677786dae114', 'روبن هود 47', this)">47</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/65814fcc-bd76-4fc5-94cc-a493cd023b0b', 'روبن هود 48', this)">48</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ed0c0af5-5e93-4314-83ce-1b4fa8538e9f', 'روبن هود 49', this)">49</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/07ba6fc0-119d-41d6-bbcf-0f5994e45a27', 'روبن هود 50', this)">50</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/6be8d54d-4317-4bd2-9539-5dd2e27c4f8b', 'روبن هود 51', this)">51</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/1dc50eb5-2698-4992-a93b-302e9eb5f71c', 'روبن هود 52', this)">52</button>
+        <button class="ep-btn" onclick="playVideo('', '1', this)">1</button><button class="ep-btn" onclick="playVideo('', '2', this)">2</button>
+        <button class="ep-btn" onclick="playVideo('', '3', this)">3</button><button class="ep-btn" onclick="playVideo('', '4', this)">4</button>
+        <button class="ep-btn" onclick="playVideo('', '5', this)">5</button><button class="ep-btn" onclick="playVideo('', '6', this)">6</button>
+        <button class="ep-btn" onclick="playVideo('', '7', this)">7</button><button class="ep-btn" onclick="playVideo('', '8', this)">8</button>
+        <button class="ep-btn" onclick="playVideo('', '9', this)">9</button><button class="ep-btn" onclick="playVideo('', '10', this)">10</button>
+        <button class="ep-btn" onclick="playVideo('', '11', this)">11</button><button class="ep-btn" onclick="playVideo('', '12', this)">12</button>
+        <button class="ep-btn" onclick="playVideo('', '13', this)">13</button><button class="ep-btn" onclick="playVideo('', '14', this)">14</button>
+        <button class="ep-btn" onclick="playVideo('', '15', this)">15</button><button class="ep-btn" onclick="playVideo('', '16', this)">16</button>
+        <button class="ep-btn" onclick="playVideo('', '17', this)">17</button><button class="ep-btn" onclick="playVideo('', '18', this)">18</button>
+        <button class="ep-btn" onclick="playVideo('', '19', this)">19</button><button class="ep-btn" onclick="playVideo('', '20', this)">20</button>
+        <button class="ep-btn" onclick="playVideo('', '21', this)">21</button><button class="ep-btn" onclick="playVideo('', '22', this)">22</button>
+        <button class="ep-btn" onclick="playVideo('', '23', this)">23</button><button class="ep-btn" onclick="playVideo('', '24', this)">24</button>
+        <button class="ep-btn" onclick="playVideo('', '25', this)">25</button><button class="ep-btn" onclick="playVideo('', '26', this)">26</button>
+        <button class="ep-btn" onclick="playVideo('', '27', this)">27</button><button class="ep-btn" onclick="playVideo('', '28', this)">28</button>
+        <button class="ep-btn" onclick="playVideo('', '29', this)">29</button><button class="ep-btn" onclick="playVideo('', '30', this)">30</button>
+        <button class="ep-btn" onclick="playVideo('', '31', this)">31</button><button class="ep-btn" onclick="playVideo('', '32', this)">32</button>
+        <button class="ep-btn" onclick="playVideo('', '33', this)">33</button><button class="ep-btn" onclick="playVideo('', '34', this)">34</button>
+        <button class="ep-btn" onclick="playVideo('', '35', this)">35</button><button class="ep-btn" onclick="playVideo('', '36', this)">36</button>
+        <button class="ep-btn" onclick="playVideo('', '37', this)">37</button><button class="ep-btn" onclick="playVideo('', '38', this)">38</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/13f60796-d3ff-4592-a50e-2d063f36c3c7', '39', this)">39</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/a88a04f9-260f-49af-beed-e7997b3e9b44', '40', this)">40</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/a5bebf0e-5ca3-4dec-bf48-a1da52d32334', '41', this)">41</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/9396b996-61a1-43dc-9353-0c4bc5f3dbbc', '42', this)">42</button>
+        <button class="ep-btn" onclick="playVideo('', '43', this)">43</button><button class="ep-btn" onclick="playVideo('', '44', this)">44</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/1c590a49-4ad1-42ae-a733-c2e7a164d76a', '45', this)">45</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/f59cc0ce-dfe5-4e87-b796-e8e445f2df63', '46', this)">46</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/fbe871a7-22b1-4b3e-a025-677786dae114', '47', this)">47</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/65814fcc-bd76-4fc5-94cc-a493cd023b0b', '48', this)">48</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ed0c0af5-5e93-4314-83ce-1b4fa8538e9f', '49', this)">49</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/07ba6fc0-119d-41d6-bbcf-0f5994e45a27', '50', this)">50</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/6be8d54d-4317-4bd2-9539-5dd2e27c4f8b', '51', this)">51</button>
+        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/1dc50eb5-2698-4992-a93b-302e9eb5f71c', '52', this)">52</button>
     </div>
 
-    <h2>مغامرات الفضاء: جريندايزر</h2>
+    <h2>جريندايزر</h2>
     <div class="episodes-grid">
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 1', this)">1</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 2', this)">2</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 3', this)">3</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 4', this)">4</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 5', this)">5</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 6', this)">6</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 7', this)">7</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 8', this)">8</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 9', this)">9</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 10', this)">10</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 11', this)">11</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 12', this)">12</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 13', this)">13</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 14', this)">14</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 15', this)">15</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 16', this)">16</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 17', this)">17</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 18', this)">18</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 19', this)">19</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 20', this)">20</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 21', this)">21</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 22', this)">22</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 23', this)">23</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 24', this)">24</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 25', this)">25</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 26', this)">26</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 27', this)">27</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 28', this)">28</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 29', this)">29</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 30', this)">30</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 31', this)">31</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 32', this)">32</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 33', this)">33</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 34', this)">34</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 35', this)">35</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 36', this)">36</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 37', this)">37</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 38', this)">38</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 39', this)">39</button>
-        <button class="ep-btn" onclick="playVideo('https://meyon.com.ye/videos/embed/ID_HERE', 'جريندايزر 40', this)">40</button>
+        <button class="ep-btn" onclick="playVideo('', '1', this)">1</button><button class="ep-btn" onclick="playVideo('', '2', this)">2</button>
+        <button class="ep-btn" onclick="playVideo('', '3', this)">3</button><button class="ep-btn" onclick="playVideo('', '4', this)">4</button>
+        <button class="ep-btn" onclick="playVideo('', '5', this)">5</button><button class="ep-btn" onclick="playVideo('', '6', this)">6</button>
+        <button class="ep-btn" onclick="playVideo('', '7', this)">7</button><button class="ep-btn" onclick="playVideo('', '8', this)">8</button>
+        <button class="ep-btn" onclick="playVideo('', '9', this)">9</button><button class="ep-btn" onclick="playVideo('', '10', this)">10</button>
+        <button class="ep-btn" onclick="playVideo('', '11', this)">11</button><button class="ep-btn" onclick="playVideo('', '12', this)">12</button>
+        <button class="ep-btn" onclick="playVideo('', '13', this)">13</button><button class="ep-btn" onclick="playVideo('', '14', this)">14</button>
+        <button class="ep-btn" onclick="playVideo('', '15', this)">15</button><button class="ep-btn" onclick="playVideo('', '16', this)">16</button>
+        <button class="ep-btn" onclick="playVideo('', '17', this)">17</button><button class="ep-btn" onclick="playVideo('', '18', this)">18</button>
+        <button class="ep-btn" onclick="playVideo('', '19', this)">19</button><button class="ep-btn" onclick="playVideo('', '20', this)">20</button>
+        <button class="ep-btn" onclick="playVideo('', '21', this)">21</button><button class="ep-btn" onclick="playVideo('', '22', this)">22</button>
+        <button class="ep-btn" onclick="playVideo('', '23', this)">23</button><button class="ep-btn" onclick="playVideo('', '24', this)">24</button>
+        <button class="ep-btn" onclick="playVideo('', '25', this)">25</button><button class="ep-btn" onclick="playVideo('', '26', this)">26</button>
+        <button class="ep-btn" onclick="playVideo('', '27', this)">27</button><button class="ep-btn" onclick="playVideo('', '28', this)">28</button>
+        <button class="ep-btn" onclick="playVideo('', '29', this)">29</button><button class="ep-btn" onclick="playVideo('', '30', this)">30</button>
+        <button class="ep-btn" onclick="playVideo('', '31', this)">31</button><button class="ep-btn" onclick="playVideo('', '32', this)">32</button>
+        <button class="ep-btn" onclick="playVideo('', '33', this)">33</button><button class="ep-btn" onclick="playVideo('', '34', this)">34</button>
+        <button class="ep-btn" onclick="playVideo('', '35', this)">35</button><button class="ep-btn" onclick="playVideo('', '36', this)">36</button>
+        <button class="ep-btn" onclick="playVideo('', '37', this)">37</button><button class="ep-btn" onclick="playVideo('', '38', this)">38</button>
+        <button class="ep-btn" onclick="playVideo('', '39', this)">39</button><button class="ep-btn" onclick="playVideo('', '40', this)">40</button>
     </div>
 </div>
 
 <script>
     function playVideo(url, title, btn) {
-        if(url.includes('ID_HERE')) { alert("لم يتم إضافة الرابط بعد!"); return; }
+        if(!url) { alert("هذه الحلقة قيد التجهيز"); return; }
         const area = document.getElementById('videoArea');
-        const player = document.getElementById('videoPlayer');
-        const titleDiv = document.getElementById('videoTitle');
         area.style.display = 'block';
-        player.src = url;
-        titleDiv.innerText = "تشاهد الآن: " + title;
-        window.open('https://your-ad-link.com', '_blank'); // إعلان Pop-under
+        document.getElementById('videoPlayer').src = url;
+        document.getElementById('videoTitle').innerText = "تشاهد الآن: حلقة " + title;
+        window.open('https://your-ad-link.com', '_blank');
         const btns = document.getElementsByClassName('ep-btn');
         for(let b of btns) { b.classList.remove('active'); }
         btn.classList.add('active');
