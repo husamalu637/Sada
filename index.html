@@ -34,12 +34,37 @@
             padding: 25px 0;
             text-align: center;
             background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         header h1 { font-size: 1.8rem; margin-bottom: 5px; }
         header p { font-size: 0.9rem; opacity: 0.9; }
+
+        .search-container {
+            width: 95%;
+            max-width: 600px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 2px solid var(--primary);
+            background-color: var(--card-bg);
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+        }
 
         .container {
             max-width: 1000px;
@@ -85,8 +110,9 @@
             object-fit: cover;
         }
 
-        #treasure-island-card .image-box img {
-            transform: scale(1.15) translateY(-15px);
+        /* إنزال صورة فلونة قليلاً */
+        #flona-card img {
+            object-position: center 20%; 
         }
 
         .info {
@@ -120,86 +146,55 @@
     <p>أجمل مسلسلات الزمن الجميل</p>
 </header>
 
-<div class="container">
+<div class="search-container">
+    <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن مسلسلك المفضل...">
+</div>
+
+<div class="container" id="animeContainer">
     
-    <a href="https://husamalu637.github.io/Sada5/" class="show-card" onclick="openAd()">
-        <div class="image-box">
-            <img src="https://upload.wikimedia.org/wikipedia/ar/4/44/%D8%B9%D8%AF%D9%86%D8%A7%D9%86_%D9%88%D9%84%D9%8A%D9%86%D8%A7.jpg" alt="عدنان ولينا">
-        </div>
-        <div class="info">
-            <h2>عدنان ولينا</h2>
-            <div><span class="btn">دخول</span></div>
-        </div>
+    <a href="https://husamalu637.github.io/Sada5/" class="show-card">
+        <div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/4/44/%D8%B9%D8%AF%D9%86%D8%A7%D9%86_%D9%88%D9%84%D9%8A%D9%86%D8%A7.jpg" alt="عدنان ولينا"></div>
+        <div class="info"><h2>عدنان ولينا</h2><div><span class="btn">دخول</span></div></div>
     </a>
 
-    <a href="https://husamalu637.github.io/Sada2husam/" class="show-card" onclick="openAd()">
-        <div class="image-box">
-            <img src="https://upload.wikimedia.org/wikipedia/ar/8/81/%D8%B1%D9%88%D8%A8%D9%86_%D9%87%D9%88%D8%AF_%D8%A7%D9%84%D8%B3%D9%87%D9%85_%D8%A7%D9%84%D9%86%D8%A7%D8%B1%D9%8A.jpg" alt="روبن هود">
-        </div>
-        <div class="info">
-            <h2>روبن هود</h2>
-            <div><span class="btn">دخول</span></div>
-        </div>
+    <a href="https://husamalu637.github.io/Sada2husam/" class="show-card">
+        <div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/8/81/%D8%B1%D9%88%D8%A8%D9%86_%D9%87%D9%88%D8%AF_%D8%A7%D9%84%D8%B3%D9%87%D9%85_%D8%A7%D9%84%D9%86%D8%A7%D8%B1%D9%8A.jpg" alt="روبن هود"></div>
+        <div class="info"><h2>روبن هود</h2><div><span class="btn">دخول</span></div></div>
     </a>
 
-    <a href="https://husamalu637.github.io/Sada3husam/" class="show-card" onclick="openAd()">
-        <div class="image-box">
-            <img src="https://upload.wikimedia.org/wikipedia/ar/5/5d/UFO_Robo_Grendizer.jpg" alt="غرندايزر">
-        </div>
-        <div class="info">
-            <h2>غرندايزر</h2>
-            <div><span class="btn">دخول</span></div>
-        </div>
+    <a href="https://husamalu637.github.io/Sada3husam/" class="show-card">
+        <div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/5/5d/UFO_Robo_Grendizer.jpg" alt="غرندايزر"></div>
+        <div class="info"><h2>غرندايزر</h2><div><span class="btn">دخول</span></div></div>
     </a>
 
-    <a href="https://husamalu637.github.io/Tomswar/" class="show-card" onclick="openAd()">
-        <div class="image-box">
-            <img src="https://images.justwatch.com/poster/334335154/s718/twm-swyr.jpg" alt="توم سوير">
-        </div>
-        <div class="info">
-            <h2>توم سوير</h2>
-            <div><span class="btn">دخول</span></div>
-        </div>
+    <a href="https://husamalu637.github.io/Tomswar/" class="show-card">
+        <div class="image-box"><img src="https://images.justwatch.com/poster/334335154/s718/twm-swyr.jpg" alt="توم سوير"></div>
+        <div class="info"><h2>توم سوير</h2><div><span class="btn">دخول</span></div></div>
     </a>
 
-    <a href="Https://husamalu637.github.io/Nmrmoknh/" class="show-card" onclick="openAd()">
-        <div class="image-box">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp0fRWbdpr0G-lmqC_sDfauw9XG6_GA9p2MqR3Bzcf8QA-Zq2sQ3cPhwg&s=10" alt="النمر المقنع">
-        </div>
-        <div class="info">
-            <h2>النمر المقنع</h2>
-            <div><span class="btn">دخول</span></div>
-        </div>
+    <a href="Https://husamalu637.github.io/Nmrmoknh/" class="show-card">
+        <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp0fRWbdpr0G-lmqC_sDfauw9XG6_GA9p2MqR3Bzcf8QA-Zq2sQ3cPhwg&s=10" alt="النمر المقنع"></div>
+        <div class="info"><h2>النمر المقنع</h2><div><span class="btn">دخول</span></div></div>
     </a>
 
-    <a href="https://husamalu637.github.io/Husam123j/" class="show-card" id="treasure-island-card" onclick="openAd()">
-        <div class="image-box">
-            <img src="Https://i.scdn.co/image/ab67616d0000b27335bde142cf7b1174b059bfba" alt="جزيرة الكنز">
-        </div>
-        <div class="info">
-            <h2>جزيرة الكنز</h2>
-            <div><span class="btn">دخول</span></div>
-        </div>
+    <a href="https://husamalu637.github.io/Husam123j/" class="show-card">
+        <div class="image-box"><img src="Https://i.scdn.co/image/ab67616d0000b27335bde142cf7b1174b059bfba" alt="جزيرة الكنز"></div>
+        <div class="info"><h2>جزيرة الكنز</h2><div><span class="btn">دخول</span></div></div>
     </a>
 
-    <a href="Https://husamalu637.github.io/Drobremeehusam/" class="show-card" onclick="openAd()">
-        <div class="image-box">
-            <img src="Https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlsAwQl7F3xIMKTteRi2rNW6NRGixVHp5zKUIljz1DtEpOD7TgH0JxcHP0&s=10" alt="ريمي">
-        </div>
-        <div class="info">
-            <h2>ريمي</h2>
-            <div><span class="btn">دخول</span></div>
-        </div>
+    <a href="Https://husamalu637.github.io/Drobremeehusam/" class="show-card">
+        <div class="image-box"><img src="Https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlsAwQl7F3xIMKTteRi2rNW6NRGixVHp5zKUIljz1DtEpOD7TgH0JxcHP0&s=10" alt="ريمي"></div>
+        <div class="info"><h2>ريمي</h2><div><span class="btn">دخول</span></div></div>
     </a>
 
-    <a href="https://husamalu637.github.io/Sefalnar/" class="show-card" onclick="openAd()">
-        <div class="image-box">
-            <img src="Https://www.ooanime.com/files/4973648355881f101822f29519524996.jpg" alt="سيف النار">
-        </div>
-        <div class="info">
-            <h2>سيف النار</h2>
-            <div><span class="btn">دخول</span></div>
-        </div>
+    <a href="https://husamalu637.github.io/Sefalnar/" class="show-card">
+        <div class="image-box"><img src="Https://www.ooanime.com/files/4973648355881f101822f29519524996.jpg" alt="سيف النار"></div>
+        <div class="info"><h2>سيف النار</h2><div><span class="btn">دخول</span></div></div>
+    </a>
+
+    <a href="https://husamalu637.github.io/Flona/" class="show-card" id="flona-card">
+        <div class="image-box"><img src="https://www.ooanime.com/files/0080baa2c20a2833d1017189915fd6d9.jpg" alt="فلونا"></div>
+        <div class="info"><h2>فلونا</h2><div><span class="btn">دخول</span></div></div>
     </a>
 
 </div>
@@ -210,10 +205,28 @@
 
 <script>
     const adLink = "https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a";
+    
+    // دالة فتح الإعلان عند الضغط على الكرت
+    document.querySelectorAll('.show-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            window.open(adLink, '_blank');
+        });
+    });
 
-    function openAd() {
-        window.open(adLink, '_blank');
-    }
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.show-card');
+
+    searchInput.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase().trim();
+        cards.forEach(card => {
+            const title = card.querySelector('h2').innerText.toLowerCase();
+            if (title.includes(value)) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
 </script>
 
 </body>
