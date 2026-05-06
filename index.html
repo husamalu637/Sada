@@ -9,10 +9,51 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         :root { --primary: #00d2ff; --bg: #0f141e; --card-bg: #1a2233; --text: #ffffff; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; display: flex; flex-direction: column; align-items: center; }
-        header { width: 100%; padding: 8px 0; text-align: center; background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); margin-bottom: 20px; }
-        header h1 { font-size: 1.2rem; }
+        
+        header { 
+            width: 100%; 
+            padding: 10px 15px; 
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); 
+            margin-bottom: 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        header h1 { font-size: 1.1rem; }
+
+        /* تنسيق صندوق البحث */
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .search-box input {
+            padding: 5px 10px 5px 30px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.8rem;
+            width: 150px;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .search-box input:focus { width: 180px; background: #fff; }
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            color: #3a7bd5;
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+
         .container { width: 98%; max-width: 1200px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 5px; }
-        @media (max-width: 480px) { .container { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 480px) { 
+            .container { grid-template-columns: repeat(3, 1fr); } 
+            .search-box input { width: 100px; }
+            .search-box input:focus { width: 120px; }
+        }
+        
         .show-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; display: flex; flex-direction: column; height: 190px; transition: 0.3s; }
         .show-card:hover { transform: translateY(-5px); border-color: var(--primary); }
         .image-box { width: 100%; height: 110px; background: #000; overflow: hidden; }
@@ -27,6 +68,10 @@
 
 <header>
     <h1>صدى الطفولة</h1>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="بحث عن مسلسل...">
+        <span class="search-icon">🔍</span>
+    </div>
 </header>
 
 <div class="container" id="animeContainer">
@@ -51,23 +96,23 @@
         <div class="info"><h2>توم سوير</h2><span class="btn">دخول</span></div>
     </a>
 
-    <a href="Https://husamalu637.github.io/Nmrmoknh/" class="show-card">
+    <a href="https://husamalu637.github.io/Nmrmoknh/" class="show-card">
         <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp0fRWbdpr0G-lmqC_sDfauw9XG6_GA9p2MqR3Bzcf8QA-Zq2sQ3cPhwg&s=10"></div>
         <div class="info"><h2>النمر المقنع</h2><span class="btn">دخول</span></div>
     </a>
 
     <a href="https://husamalu637.github.io/Husam123j/" class="show-card">
-        <div class="image-box"><img src="Https://i.scdn.co/image/ab67616d0000b27335bde142cf7b1174b059bfba"></div>
+        <div class="image-box"><img src="https://i.scdn.co/image/ab67616d0000b27335bde142cf7b1174b059bfba"></div>
         <div class="info"><h2>جزيرة الكنز</h2><span class="btn">دخول</span></div>
     </a>
 
-    <a href="Https://husamalu637.github.io/Drobremeehusam/" class="show-card">
-        <div class="image-box"><img src="Https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlsAwQl7F3xIMKTteRi2rNW6NRGixVHp5zKUIljz1DtEpOD7TgH0JxcHP0&s=10"></div>
+    <a href="https://husamalu637.github.io/Drobremeehusam/" class="show-card">
+        <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlsAwQl7F3xIMKTteRi2rNW6NRGixVHp5zKUIljz1DtEpOD7TgH0JxcHP0&s=10"></div>
         <div class="info"><h2>ريمي</h2><span class="btn">دخول</span></div>
     </a>
 
     <a href="https://husamalu637.github.io/Sefalnar/" class="show-card">
-        <div class="image-box"><img src="Https://www.ooanime.com/files/4973648355881f101822f29519524996.jpg"></div>
+        <div class="image-box"><img src="https://www.ooanime.com/files/4973648355881f101822f29519524996.jpg"></div>
         <div class="info"><h2>سيف النار</h2><span class="btn">دخول</span></div>
     </a>
 
@@ -112,13 +157,28 @@
     </a>
 
     <a href="https://husamalu637.github.io/Sande-pel/" class="show-card">
-        <div class="image-box"><img src="Https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvrx-KgrgypfPbIp-mxobAqav4YBSzesI9r26sC0bSuU8KZrqLtzfStc&s=10"></div>
+        <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvrx-KgrgypfPbIp-mxobAqav4YBSzesI9r26sC0bSuU8KZrqLtzfStc&s=10"></div>
         <div class="info"><h2>ساندي بيل</h2><span class="btn">دخول</span></div>
     </a>
 
     <a href="https://husamalu637.github.io/Haede/" class="show-card">
         <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgx9xYssOaaj1ZKcgxxiWKLkRSEDUWF_OyLD8wWdgDzQhs3WDOOOytcqY&s=10"></div>
         <div class="info"><h2>هايدي</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <a href="https://husamalu637.github.io/Ahd-alasdka/" class="show-card">
+        <div class="image-box"><img src="https://image.tmdb.org/t/p/w500/7sNRgaXvRgIYvvuJRsAIfwidCUm.jpg"></div>
+        <div class="info"><h2>عهد الأصدقاء</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <a href="https://husamalu637.github.io/Modafon/" class="show-card">
+        <div class="image-box"><img src="https://i.ebayimg.com/images/g/vEAAAOSwZZVlzL1a/s-l1200.jpg"></div>
+        <div class="info"><h2>المدافعون</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <a href="https://husamalu637.github.io/Alknaa/" class="show-card">
+        <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAIVDQYEfyqWYVvlJzHBKYXRt4jS6mMAUoB49WuKRCa_fL8kcT3MrINyk&s=10"></div>
+        <div class="info"><h2>القناع</h2><span class="btn">دخول</span></div>
     </a>
 
 </div>
@@ -129,8 +189,25 @@
 
 <script>
     const adLink = "https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a";
+    
+    // التعامل مع فتح الإعلانات
     document.querySelectorAll('.show-card').forEach(card => {
         card.addEventListener('click', function(e) { window.open(adLink, '_blank'); });
+    });
+
+    // كود محرك البحث الصغير (يقوم بتصفية الحاويات فور الكتابة)
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let filter = this.value.toLowerCase();
+        let cards = document.querySelectorAll('.show-card');
+        
+        cards.forEach(card => {
+            let title = card.querySelector('h2').innerText.toLowerCase();
+            if (title.includes(filter)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
     });
 </script>
 
