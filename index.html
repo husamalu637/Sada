@@ -6,12 +6,12 @@
     <title>صدى الطفولة | الرئيسية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
         :root { --primary: #00d2ff; --bg: #0f141e; --card-bg: #1a2233; --text: #ffffff; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; display: flex; flex-direction: column; align-items: center; }
         
         header { width: 100%; padding: 10px 15px; background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
-        header h1 { font-size: 1.1rem; }
+        header h1 { font-size: 1.1rem; cursor: pointer; }
 
         .ad-banner { margin: 15px 0; text-align: center; min-height: 250px; }
 
@@ -32,6 +32,15 @@
         .info h2 { font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 5px; }
         .btn { background: var(--primary); color: #000; padding: 3px 0; border-radius: 5px; font-size: 0.65rem; font-weight: bold; width: 100%; display: block; }
         
+        /* صفحة الحلقات الداخلية */
+        #watchView { display: none; width: 95%; max-width: 900px; text-align: center; margin-bottom: 30px; }
+        .back-btn { background: #252f44; color: white; border: none; padding: 8px 18px; border-radius: 8px; font-family: 'Cairo', sans-serif; font-weight: bold; cursor: pointer; margin-bottom: 20px; transition: 0.3s; display: inline-flex; align-items: center; gap: 5px; }
+        .back-btn:hover { background: var(--primary); color: #000; }
+        
+        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(55px, 1fr)); gap: 12px; background: var(--card-bg); padding: 20px; border-radius: 15px; margin-top: 15px; }
+        .ep-btn { background: #252f44; color: white; border: 2px solid transparent; padding: 12px 0; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; font-family: 'Cairo', sans-serif; }
+        .ep-btn:hover { background: var(--primary); transform: scale(1.08); border-color: white; color: #000; }
+
         footer { margin: 30px 0 15px; padding: 15px; text-align: center; font-size: 0.75rem; color: #888; border-top: 1px solid #333; width: 90%; }
         footer p { margin-bottom: 5px; line-height: 1.5; }
     </style>
@@ -39,8 +48,8 @@
 <body>
 
 <header>
-    <h1>صدى الطفولة</h1>
-    <div class="search-box">
+    <h1 onclick="goHome()" style="cursor: pointer;">صدى الطفولة</h1>
+    <div class="search-box" id="searchWrapper">
         <input type="text" id="searchInput" placeholder="بحث عن مسلسل...">
         <span class="search-icon">🔍</span>
     </div>
@@ -53,35 +62,52 @@
     <script src="https://www.highperformanceformat.com/b8ba5b25ff25e41ea44c2df3a1b05378/invoke.js"></script>
 </div>
 
+<!-- الشاشة الرئيسية: الرفوف -->
 <div class="container" id="animeContainer">
-    <!-- تم تحديث الروابط هنا -->
-    <div class="show-card" data-url="https://cartoony.net/watch/56/441"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/4/44/%D8%B9%D8%AF%D9%86%D8%A7%D9%86_%D9%88%D9%84%D9%8A%D9%86%D8%A7.jpg"></div><div class="info"><h2>عدنان ولينا</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/391/3406"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2024/Amjad/Aug/Poster_Robin_Hood/original/Poster_Robin_Hood.jpg"></div><div class="info"><h2>روبن هود</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/21/56"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/5/5d/UFO_Robo_Grendizer.jpg"></div><div class="info"><h2>غرندايزر</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/494/4852"><div class="image-box"><img src="https://images.justwatch.com/poster/334335154/s718/twm-swyr.jpg"></div><div class="info"><h2>توم سوير</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/76/571"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp0fRWbdpr0G-lmqC_sDfauw9XG6_GA9p2MqR3Bzcf8QA-Zq2sQ3cPhwg&s=10"></div><div class="info"><h2>النمر المقنع</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/46/370"><div class="image-box"><img src="https://i.scdn.co/image/ab67616d0000b27335bde142cf7b1174b059bfba"></div><div class="info"><h2>جزيرة الكنز</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/482/4723"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlsAwQl7F3xIMKTteRi2rNW6NRGixVHp5zKUIljz1DtEpOD7TgH0JxcHP0&s=10"></div><div class="info"><h2>ريمي</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/215/1843"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzUg2aIxbt5QEbc1X6M0aglFzIGnARI99JxhnQpC5xr3E0ndY957Zx6hs&s=10"></div><div class="info"><h2>سيف النار</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/228/2027"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2021/MARCH/amjad/untitled/Flona_poster/original/Flona_poster.jpg"></div><div class="info"><h2>فلونا</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/121/995"><div class="image-box"><img src="https://3vmgj6vykucs.merlincdn.net/content/n/L3/182245/background.jpg?v=638454118772055658"></div><div class="info"><h2>سندباد</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/297/4005"><div class="image-box"><img src="https://www.histoiredesfax.com/wp-content/uploads/2016/11/captain-majed.jpg"></div><div class="info"><h2>كابتن ماجد</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/453/4243"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEy4JwDEtrpD4Cd7-IjFN798NHh3egVVr5FFc_P9CvEnL900Cb8m47cdo&s=10"></div><div class="info"><h2>المحقق كونان</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/31/272"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/1/18/%D9%85%D8%BA%D8%A7%D9%85%D8%B1%D8%A7%D8%AA_%D8%B3%D8%A7%D8%B3%D9%88%D9%83%D9%8A.jpg"></div><div class="info"><h2>ساسوكي</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/285/2584"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/a/a4/%D9%85%D8%A7%D9%88%D9%83%D9%84%D9%8A_%D9%81%D8%AA%D9%89_%D8%A7%D9%84%D8%A3%D8%AF%D8%BA%D8%A7%D9%84.jpg"></div><div class="info"><h2>ماوكلي</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/317/4528"><div class="image-box"><img src="https://cdn.salla.sa/RAPGYV/983473d0-c331-42d9-8934-24f739fd4032-1000x750.8698677801-Zj9nhp7feJP3r8Q3NwyXa83T47yMySZa9XpPuTuD.png"></div><div class="info"><h2>داي الشجاع</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/96/691"><div class="image-box"><img src="https://bnfsj.net/uploads/images/2022/02/jpD7O.jpeg"></div><div class="info"><h2>سالي</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/91/740"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvrx-KgrgypfPbIp-mxobAqav4YBSzesI9r26sC0bSuU8KZrqLtzfStc&s=10"></div><div class="info"><h2>ساندي بيل</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/220/1914"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgx9xYssOaaj1ZKcgxxiWKLkRSEDUWF_OyLD8wWdgDzQhs3WDOOOytcqY&s=10"></div><div class="info"><h2>هايدي</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/321/4576"><div class="image-box"><img src="https://image.tmdb.org/t/p/w500/7sNRgaXvRgIYvvuJRsAIfwidCUm.jpg"></div><div class="info"><h2>عهد الأصدقاء</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/1050/11462"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/b1b8b481-eb47-4145-8925-241a6a6b88ef_cover.webp"></div><div class="info"><h2>المدافعون</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/682/6971"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAIVDQYEfyqWYVvlJzHBKYXRt4jS6mMAUoB49WuKRCa_fL8kcT3MrINyk&s=10"></div><div class="info"><h2>القناع</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/643/6767"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsp_tC0L8OYNDphmTAYJyIPnoX92nDcfRArgQyI_cZVg&s=10"></div><div class="info"><h2>أنا وأخي</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/1054/11701"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Wo9xuZXzS83KRBJEJPzwdAwsZjUMtv7_FjSJHH3QMw&s=10"></div><div class="info"><h2>لوفي</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/627/6536"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp4xsSjCcvIzQ27esN0J0lfPAyNhLBxLC7n0Jmcsobo5YjqowHvnCcb9N3&s=10"></div><div class="info"><h2>دراغون بول</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/161/1296"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/de8d3b54-a791-4b78-9929-16cebba7cf63"></div><div class="info"><h2>زورو</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/958/11005"><div class="image-box"><img src="https://images.justwatch.com/poster/319949873/s332/.jpg"></div><div class="info"><h2>بوكيمون</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-url="https://cartoony.net/watch/562/5878"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/3/3a/%D8%A7%D9%84%DA%A9%D8%A7%D8%A8%D8%AA%D9%86_%D8%B1%D8%A7%D8%A8%D8%AD.jpg"></div><div class="info"><h2>كابتن رابح</h2><span class="btn">دخول</span></div></div>
+    <!-- الـ 6 كرتونات الإضافية بالروابط المحدثة -->
+    <div class="show-card" data-title="لوز و سكر" data-url="https://cartoony.net/watch/550/5740" data-ep="26"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/552_cover.webp"></div><div class="info"><h2>لوز و سكر</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="فيكي" data-url="https://cartoony.net/watch/1114/15079" data-ep="78"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/0a0199dd-2143-491b-ae7a-c2cd1fa72a5e_cover.webp"></div><div class="info"><h2>فيكي</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="صاحب الظل الطويل" data-url="https://cartoony.net/watch/146/1201" data-ep="40"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/822_cover.webp"></div><div class="info"><h2>صاحب الظل الطويل</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="المخترع الصغير" data-url="https://cartoony.net/watch/526/5405" data-ep="26"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/528_cover.webp"></div><div class="info"><h2>المخترع الصغير</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="الصياد الصغير" data-url="https://cartoony.net/watch/375/3216" data-ep="30"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/377_cover.webp"></div><div class="info"><h2>الصياد الصغير</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="الحديقة السرية" data-url="https://cartoony.net/watch/635/6651" data-ep="39"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/637_cover.webp"></div><div class="info"><h2>الحديقة السرية</h2><span class="btn">دخول</span></div></div>
+
+    <!-- باقي المسلسلات -->
+    <div class="show-card" data-title="عدنان ولينا" data-url="https://cartoony.net/watch/56/441" data-ep="26"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/4/44/%D8%B9%D8%AF%D9%86%D8%A7%D9%86_%D9%88%D9%84%D9%8A%D9%86%D8%A7.jpg"></div><div class="info"><h2>عدنان ولينا</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="روبن هود" data-url="https://cartoony.net/watch/391/3406" data-ep="52"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2024/Amjad/Aug/Poster_Robin_Hood/original/Poster_Robin_Hood.jpg"></div><div class="info"><h2>روبن هود</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="غرندايزر" data-url="https://cartoony.net/watch/21/56" data-ep="74"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/5/5d/UFO_Robo_Grendizer.jpg"></div><div class="info"><h2>غرندايزر</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="توم سوير" data-url="https://cartoony.net/watch/494/4852" data-ep="49"><div class="image-box"><img src="https://images.justwatch.com/poster/334335154/s718/twm-swyr.jpg"></div><div class="info"><h2>توم سوير</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="النمر المقنع" data-url="https://cartoony.net/watch/76/571" data-ep="105"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp0fRWbdpr0G-lmqC_sDfauw9XG6_GA9p2MqR3Bzcf8QA-Zq2sQ3cPhwg&s=10"></div><div class="info"><h2>النمر المقنع</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="جزيرة الكنز" data-url="https://cartoony.net/watch/46/370" data-ep="26"><div class="image-box"><img src="https://i.scdn.co/image/ab67616d0000b27335bde142cf7b1174b059bfba"></div><div class="info"><h2>جزيرة الكنز</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="ريمي" data-url="https://cartoony.net/watch/482/4723" data-ep="26"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlsAwQl7F3xIMKTteRi2rNW6NRGixVHp5zKUIljz1DtEpOD7TgH0JxcHP0&s=10"></div><div class="info"><h2>ريمي</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="سيف النار" data-url="https://cartoony.net/watch/215/1843" data-ep="152"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzUg2aIxbt5QEbc1X6M0aglFzIGnARI99JxhnQpC5xr3E0ndY957Zx6hs&s=10"></div><div class="info"><h2>سيف النار</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="فلونا" data-url="https://cartoony.net/watch/228/2027" data-ep="50"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2021/MARCH/amjad/untitled/Flona_poster/original/Flona_poster.jpg"></div><div class="info"><h2>فلونا</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="سندباد" data-url="https://cartoony.net/watch/121/995" data-ep="52"><div class="image-box"><img src="https://3vmgj6vykucs.merlincdn.net/content/n/L3/182245/background.jpg?v=638454118772055658"></div><div class="info"><h2>سندباد</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="كابتن ماجد" data-url="https://cartoony.net/watch/297/4005" data-ep="128"><div class="image-box"><img src="https://www.histoiredesfax.com/wp-content/uploads/2016/11/captain-majed.jpg"></div><div class="info"><h2>كابتن ماجد</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="المحقق كونان" data-url="https://cartoony.net/watch/453/4243" data-ep="100"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEy4JwDEtrpD4Cd7-IjFN798NHh3egVVr5FFc_P9CvEnL900Cb8m47cdo&s=10"></div><div class="info"><h2>المحقق كونان</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="ساسوكي" data-url="https://cartoony.net/watch/31/272" data-ep="29"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/1/18/%D9%85%D8%BA%D8%A7%D9%85%D8%B1%D8%A7%D8%AA_%D8%B3%D8%A7%D8%B3%D9%88%D9%83%D9%8A.jpg"></div><div class="info"><h2>ساسوكي</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="ماوكلي" data-url="https://cartoony.net/watch/285/2584" data-ep="52"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/a/a4/%D9%85%D8%A7%D9%88%D9%83%D9%84%D9%8A_%D9%81%D8%AA%D9%89_%D8%A7%D9%84%D8%A3%D8%AF%D8%BA%D8%A7%D9%84.jpg"></div><div class="info"><h2>ماوكلي</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="داي الشجاع" data-url="https://cartoony.net/watch/317/4528" data-ep="46"><div class="image-box"><img src="https://cdn.salla.sa/RAPGYV/983473d0-c331-42d9-8934-24f739fd4032-1000x750.8698677801-Zj9nhp7feJP3r8Q3NwyXa83T47yMySZa9XpPuTuD.png"></div><div class="info"><h2>داي الشجاع</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="سالي" data-url="https://cartoony.net/watch/96/691" data-ep="46"><div class="image-box"><img src="https://bnfsj.net/uploads/images/2022/02/jpD7O.jpeg"></div><div class="info"><h2>سالي</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="ساندي بيل" data-url="https://cartoony.net/watch/91/740" data-ep="47"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvrx-KgrgypfPbIp-mxobAqav4YBSzesI9r26sC0bSuU8KZrqLtzfStc&s=10"></div><div class="info"><h2>ساندي بيل</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="هايدي" data-url="https://cartoony.net/watch/220/1914" data-ep="52"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgx9xYssOaaj1ZKcgxxiWKLkRSEDUWF_OyLD8wWdgDzQhs3WDOOOytcqY&s=10"></div><div class="info"><h2>هايدي</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="عهد الأصدقاء" data-url="https://cartoony.net/watch/321/4576" data-ep="33"><div class="image-box"><img src="https://image.tmdb.org/t/p/w500/7sNRgaXvRgIYvvuJRsAIfwidCUm.jpg"></div><div class="info"><h2>عهد الأصدقاء</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="المدافعون" data-url="https://cartoony.net/watch/1050/11462" data-ep="20"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/b1b8b481-eb47-4145-8925-241a6a6b88ef_cover.webp"></div><div class="info"><h2>المدافعون</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="القناع" data-url="https://cartoony.net/watch/682/6971" data-ep="20"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAIVDQYEfyqWYVvlJzHBKYXRt4jS6mMAUoB49WuKRCa_fL8kcT3MrINyk&s=10"></div><div class="info"><h2>القناع</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="أنا وأخي" data-url="https://cartoony.net/watch/643/6767" data-ep="35"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsp_tC0L8OYNDphmTAYJyIPnoX92nDcfRArgQyI_cZVg&s=10"></div><div class="info"><h2>أنا وأخي</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="لوفي" data-url="https://cartoony.net/watch/1054/11701" data-ep="30"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Wo9xuZXzS83KRBJEJPzwdAwsZjUMtv7_FjSJHH3QMw&s=10"></div><div class="info"><h2>لوفي</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="دراغون بول" data-url="https://cartoony.net/watch/627/6536" data-ep="50"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp4xsSjCcvIzQ27esN0J0lfPAyNhLBxLC7n0Jmcsobo5YjqowHvnCcb9N3&s=10"></div><div class="info"><h2>دراغون بول</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="زورو" data-url="https://cartoony.net/watch/161/1296" data-ep="52"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/de8d3b54-a791-4b78-9929-16cebba7cf63"></div><div class="info"><h2>زورو</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="بوكيمون" data-url="https://cartoony.net/watch/958/11005" data-ep="50"><div class="image-box"><img src="https://images.justwatch.com/poster/319949873/s332/.jpg"></div><div class="info"><h2>بوكيمون</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-title="كابتن رابح" data-url="https://cartoony.net/watch/562/5878" data-ep="50"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/3/3a/%D8%A7%D9%84%DA%A9%D8%A7%D8%A8%D8%AA%D9%86_%D8%B1%D8%A7%D8%A8%D8%AD.jpg"></div><div class="info"><h2>كابتن رابح</h2><span class="btn">دخول</span></div></div>
+</div>
+
+<!-- صفحة الحلقات الداخلية -->
+<div id="watchView">
+    <button class="back-btn" onclick="goHome()">⬅ العودة إلى القائمة الرئيسية</button>
+    <h2 id="currentShowTitle" style="margin-bottom: 15px; color: var(--primary);"></h2>
+    <p style="color: #aaa; margin-bottom: 15px; font-size: 0.9rem;">اختر رقم الحلقة للانتقال للمشاهدة فوراً:</p>
+    <div class="episodes-grid" id="episodesGrid"></div>
 </div>
 
 <div class="ad-banner">
@@ -99,16 +125,61 @@
 
 <script>
     const adLink = "https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a";
+    
+    const animeContainer = document.getElementById('animeContainer');
+    const watchView = document.getElementById('watchView');
+    const searchWrapper = document.getElementById('searchWrapper');
+    const episodesGrid = document.getElementById('episodesGrid');
+    const currentShowTitle = document.getElementById('currentShowTitle');
+
     document.querySelectorAll('.show-card').forEach(card => {
         card.addEventListener('click', function(e) {
             e.preventDefault();
-            // فتح الإعلان عند النقر
             window.open(adLink, '_blank');
-            // الانتقال للرابط المطلوب بعد التأخير
-            const url = this.getAttribute('data-url');
-            if (url) { setTimeout(() => { window.location.href = url; }, 100); }
+
+            const title = this.getAttribute('data-title');
+            const fullUrl = this.getAttribute('data-url');
+            const totalEps = parseInt(this.getAttribute('data-ep'));
+
+            openShow(title, fullUrl, totalEps);
         });
     });
+
+    function openShow(title, fullUrl, totalEps) {
+        animeContainer.style.display = 'none';
+        searchWrapper.style.display = 'none';
+        watchView.style.display = 'block';
+        currentShowTitle.innerText = "مسلسل: " + title;
+        episodesGrid.innerHTML = '';
+        window.scrollTo(0, 0);
+
+        let parts = fullUrl.split('/');
+        let baseShowId = parts[4];       
+        let baseEpisodeId = parseInt(parts[5]) || 0; 
+
+        for (let i = 1; i <= totalEps; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'ep-btn';
+            btn.innerText = i;
+            
+            let currentEpId = baseEpisodeId + (i - 1);
+            let epUrl = `https://cartoony.net/watch/${baseShowId}/${currentEpId}`;
+
+            btn.onclick = function() {
+                window.open(adLink, '_blank');
+                window.location.href = epUrl;
+            };
+            episodesGrid.appendChild(btn);
+        }
+    }
+
+    function goHome() {
+        watchView.style.display = 'none';
+        animeContainer.style.display = 'grid';
+        searchWrapper.style.display = 'flex';
+        window.scrollTo(0, 0);
+    }
+
     document.getElementById('searchInput').addEventListener('input', function() {
         let filter = this.value.toLowerCase();
         document.querySelectorAll('.show-card').forEach(card => {
