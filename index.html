@@ -97,7 +97,14 @@
     <div class="show-card" data-title="دراغون بول" data-url="https://cartoony.net/watch/627/6536" data-ep="50"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp4xsSjCcvIzQ27esN0J0lfPAyNhLBxLC7n0Jmcsobo5YjqowHvnCcb9N3&s=10"></div><div class="info"><h2>دراغون بول</h2><span class="btn">دخول</span></div></div>
     <div class="show-card" data-title="زورو" data-url="https://cartoony.net/watch/161/1296" data-ep="52"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/de8d3b54-a791-4b78-9929-16cebba7cf63"></div><div class="info"><h2>زورو</h2><span class="btn">دخول</span></div></div>
     <div class="show-card" data-title="بوكيمون" data-url="https://cartoony.net/watch/958/11005" data-ep="50"><div class="image-box"><img src="https://images.justwatch.com/poster/319949873/s332/.jpg"></div><div class="info"><h2>بوكيمون</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-title="كابتن رابح" data-url="https://cartoony.net/watch/562/5878" data-ep="50"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/3/3a/%D8%A7%D9%84%DA%A9%D8%A7%D8%A7%D8%AA%D9%86_%D8%B1%D8%A7%D8%A8%D8%AD.jpg"></div><div class="info"><h2>كابتن رابح</h2><span class="btn">دخول</span></div></div>
+    
+    <!-- تم استبدال رابط صورة كابتن رابح بالرابط الجديد المحدد -->
+    <div class="show-card" data-title="كابتن رابح" data-url="https://cartoony.net/watch/562/5878" data-ep="50">
+        <div class="image-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkwDtPS0N7Qg4j1T6sgNcKOIW9aG-qD5v4mm7k19nLzqbmOaN86GDSupu91q14GU1iw6Uqvgel2_FCntOPH-NiehMCWqfQFgaiT7M3XVQ&s=10">
+        </div>
+        <div class="info"><h2>كابتن رابح</h2><span class="btn">دخول</span></div>
+    </div>
 </div>
 
 <!-- صفحة الحلقات الداخلية -->
@@ -139,7 +146,6 @@
     const episodesGrid = document.getElementById('episodesGrid');
     const currentShowTitle = document.getElementById('currentShowTitle');
 
-    // تفعيل نظام الإجبار الإعلاني (نقر مرتين لفتح الرابط)
     function setupForcedAdClick(element, onSuccess) {
         let clickCount = 0;
         
@@ -148,18 +154,15 @@
             clickCount++;
 
             if (clickCount === 1) {
-                // النقرة الأولى: فتح الإعلان الأول ومنع الانتقال
                 window.open(adLink, '_blank');
             } else if (clickCount === 2) {
-                // النقرة الثانية: فتح الإعلان الثاني والسماح بالانتقال للرابط الحقيقي
                 window.open(adLink, '_blank');
-                clickCount = 0; // إعادة تعيين العداد للضغطات القادمة
-                onSuccess();    // تنفيذ عملية الانتقال الفعلية
+                clickCount = 0; 
+                onSuccess();    
             }
         });
     }
 
-    // تطبيق النظام على كروت المسلسلات في الصفحة الرئيسية
     document.querySelectorAll('.show-card').forEach(card => {
         const title = card.getAttribute('data-title');
         const fullUrl = card.getAttribute('data-url');
@@ -190,7 +193,6 @@
             let currentEpId = baseEpisodeId + (i - 1);
             let epUrl = `https://cartoony.net/watch/${baseShowId}/${currentEpId}`;
 
-            // تطبيق نظام النقر مرتين (إعلانين) على أزرار الحلقات أيضاً
             setupForcedAdClick(btn, function() {
                 window.location.href = epUrl;
             });
