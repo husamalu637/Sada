@@ -13,8 +13,6 @@
         header { width: 100%; padding: 10px 15px; background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
         header h1 { font-size: 1.1rem; cursor: pointer; }
 
-        .ad-banner { margin: 15px 0; text-align: center; min-height: 250px; }
-
         .search-box { position: relative; display: flex; align-items: center; }
         .search-box input { padding: 5px 10px 5px 30px; border-radius: 20px; border: none; outline: none; font-family: 'Cairo', sans-serif; font-size: 0.8rem; width: 150px; transition: 0.3s; background: rgba(255, 255, 255, 0.9); }
         .search-box input:focus { width: 180px; background: #fff; }
@@ -55,13 +53,6 @@
     </div>
 </header>
 
-<div class="ad-banner">
-    <script>
-      atOptions = { 'key' : 'b8ba5b25ff25e41ea44c2df3a1b05378', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
-    </script>
-    <script src="https://www.highperformanceformat.com/b8ba5b25ff25e41ea44c2df3a1b05378/invoke.js"></script>
-</div>
-
 <!-- الشاشة الرئيسية: الرفوف -->
 <div class="container" id="animeContainer">
     <div class="show-card" data-title="لوز و سكر" data-url="https://cartoony.net/watch/550/5740" data-ep="26"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/552_cover.webp"></div><div class="info"><h2>لوز و سكر</h2><span class="btn">دخول</span></div></div>
@@ -98,7 +89,6 @@
     <div class="show-card" data-title="زورو" data-url="https://cartoony.net/watch/161/1296" data-ep="52"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/de8d3b54-a791-4b78-9929-16cebba7cf63"></div><div class="info"><h2>زورو</h2><span class="btn">دخول</span></div></div>
     <div class="show-card" data-title="بوكيمون" data-url="https://cartoony.net/watch/958/11005" data-ep="50"><div class="image-box"><img src="https://images.justwatch.com/poster/319949873/s332/.jpg"></div><div class="info"><h2>بوكيمون</h2><span class="btn">دخول</span></div></div>
     
-    <!-- تم استبدال رابط صورة كابتن رابح بالرابط الجديد المحدد -->
     <div class="show-card" data-title="كابتن رابح" data-url="https://cartoony.net/watch/562/5878" data-ep="50">
         <div class="image-box">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkwDtPS0N7Qg4j1T6sgNcKOIW9aG-qD5v4mm7k19nLzqbmOaN86GDSupu91q14GU1iw6Uqvgel2_FCntOPH-NiehMCWqfQFgaiT7M3XVQ&s=10">
@@ -111,24 +101,8 @@
 <div id="watchView">
     <button class="back-btn" onclick="goHome()">⬅ العودة إلى القائمة الرئيسية</button>
     <h2 id="currentShowTitle" style="margin-bottom: 15px; color: var(--primary);"></h2>
-    
-    <!-- إعلان إضافي داخل صفحة الحلقات -->
-    <div class="ad-banner">
-        <script>
-          atOptions = { 'key' : 'b8ba5b25ff25e41ea44c2df3a1b05378', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
-        </script>
-        <script src="https://www.highperformanceformat.com/b8ba5b25ff25e41ea44c2df3a1b05378/invoke.js"></script>
-    </div>
-
     <p style="color: #aaa; margin-bottom: 15px; font-size: 0.9rem;">اختر رقم الحلقة للانتقال للمشاهدة فوراً:</p>
     <div class="episodes-grid" id="episodesGrid"></div>
-</div>
-
-<div class="ad-banner">
-    <script>
-      atOptions = { 'key' : 'b8ba5b25ff25e41ea44c2df3a1b05378', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
-    </script>
-    <script src="https://www.highperformanceformat.com/b8ba5b25ff25e41ea44c2df3a1b05378/invoke.js"></script>
 </div>
 
 <footer>
@@ -147,19 +121,11 @@
     const currentShowTitle = document.getElementById('currentShowTitle');
 
     function setupForcedAdClick(element, onSuccess) {
-        let clickCount = 0;
-        
         element.addEventListener('click', function(e) {
             e.preventDefault();
-            clickCount++;
-
-            if (clickCount === 1) {
-                window.open(adLink, '_blank');
-            } else if (clickCount === 2) {
-                window.open(adLink, '_blank');
-                clickCount = 0; 
-                onSuccess();    
-            }
+            // فتح إعلان واحد فقط في تبويب جديد، ثم التوجه مباشرة للرابط المطلوب
+            window.open(adLink, '_blank');
+            onSuccess();
         });
     }
 
