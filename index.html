@@ -10,10 +10,11 @@
         :root { --primary: #00d2ff; --bg: #0f141e; --card-bg: #1a2233; --text: #ffffff; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; display: flex; flex-direction: column; align-items: center; }
         
-        header { width: 100%; padding: 10px 15px; background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+        header { width: 100%; padding: 10px 15px; background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
         header h1 { font-size: 1.1rem; cursor: pointer; }
 
-        .ad-banner { margin: 15px 0; text-align: center; min-height: 250px; }
+        /* حاويات الإعلانات الموحدة */
+        .ad-top, .ad-bottom { margin: 10px 0; text-align: center; width: 100%; }
 
         .search-box { position: relative; display: flex; align-items: center; }
         .search-box input { padding: 5px 10px 5px 30px; border-radius: 20px; border: none; outline: none; font-family: 'Cairo', sans-serif; font-size: 0.8rem; width: 150px; transition: 0.3s; background: rgba(255, 255, 255, 0.9); }
@@ -23,7 +24,7 @@
         .container { width: 98%; max-width: 1200px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 5px; }
         @media (max-width: 480px) { .container { grid-template-columns: repeat(3, 1fr); } }
         
-        .show-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; display: flex; flex-direction: column; height: 190px; transition: 0.3s; cursor: pointer; }
+        .show-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; display: flex; flex-direction: column; height: 190px; transition: 0.3s; cursor: pointer; -webkit-tap-highlight-color: transparent; }
         .show-card:hover { transform: translateY(-5px); border-color: var(--primary); }
         .image-box { width: 100%; height: 110px; background: #000; overflow: hidden; }
         .image-box img { width: 100%; height: 100%; object-fit: cover; }
@@ -33,15 +34,18 @@
         .btn { background: var(--primary); color: #000; padding: 3px 0; border-radius: 5px; font-size: 0.65rem; font-weight: bold; width: 100%; display: block; }
         
         /* صفحة الحلقات الداخلية */
-        #watchView { display: none; width: 95%; max-width: 900px; text-align: center; margin-bottom: 30px; }
-        .back-btn { background: #252f44; color: white; border: none; padding: 8px 18px; border-radius: 8px; font-family: 'Cairo', sans-serif; font-weight: bold; cursor: pointer; margin-bottom: 20px; transition: 0.3s; display: inline-flex; align-items: center; gap: 5px; }
+        #watchView { display: none; width: 95%; max-width: 900px; text-align: center; margin-bottom: 20px; }
+        .back-btn { background: #252f44; color: white; border: none; padding: 8px 18px; border-radius: 8px; font-family: 'Cairo', sans-serif; font-weight: bold; cursor: pointer; margin-bottom: 15px; transition: 0.3s; display: inline-flex; align-items: center; gap: 5px; }
         .back-btn:hover { background: var(--primary); color: #000; }
         
         .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(55px, 1fr)); gap: 12px; background: var(--card-bg); padding: 20px; border-radius: 15px; margin-top: 15px; }
-        .ep-btn { background: #252f44; color: white; border: 2px solid transparent; padding: 12px 0; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; font-family: 'Cairo', sans-serif; text-decoration: none; display: flex; align-items: center; justify-content: center; }
+        .ep-btn { background: #252f44; color: white; border: 2px solid transparent; padding: 12px 0; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; font-family: 'Cairo', sans-serif; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
         .ep-btn:hover { background: var(--primary); transform: scale(1.08); border-color: white; color: #000; }
+        
+        .click-counter { font-size: 0.55rem; color: #00d2ff; margin-top: 3px; background: rgba(0,0,0,0.3); padding: 1px 5px; border-radius: 4px; }
+        .ep-btn:hover .click-counter { color: #000; background: rgba(255,255,255,0.4); }
 
-        footer { margin: 30px 0 15px; padding: 15px; text-align: center; font-size: 0.75rem; color: #888; border-top: 1px solid #333; width: 90%; }
+        footer { margin: 20px 0 15px; padding: 15px; text-align: center; font-size: 0.75rem; color: #888; border-top: 1px solid #333; width: 90%; }
         footer p { margin-bottom: 5px; line-height: 1.5; }
     </style>
 </head>
@@ -55,15 +59,14 @@
     </div>
 </header>
 
-<!-- بانر إعلاني واحد فقط في الواجهة الأولى -->
-<div class="ad-banner">
+<!-- الإعلان العلوي -->
+<div class="ad-top">
     <script>
       atOptions = { 'key' : 'b8ba5b25ff25e41ea44c2df3a1b05378', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
     </script>
     <script src="https://www.highperformanceformat.com/b8ba5b25ff25e41ea44c2df3a1b05378/invoke.js"></script>
 </div>
 
-<!-- الشاشة الرئيسية: الرفوف -->
 <div class="container" id="animeContainer">
     <div class="show-card" data-title="لوز و سكر" data-url="https://cartoony.net/watch/550/5740" data-ep="26"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/552_cover.webp"></div><div class="info"><h2>لوز و سكر</h2><span class="btn">دخول</span></div></div>
     <div class="show-card" data-title="فيكي" data-url="https://cartoony.net/watch/1114/15079" data-ep="78"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/0a0199dd-2143-491b-ae7a-c2cd1fa72a5e_cover.webp"></div><div class="info"><h2>فيكي</h2><span class="btn">دخول</span></div></div>
@@ -84,16 +87,12 @@
     <div class="show-card" data-title="سندباد" data-url="https://cartoony.net/watch/121/995" data-ep="52"><div class="image-box"><img src="https://3vmgj6vykucs.merlincdn.net/content/n/L3/182245/background.jpg?v=638454118772055658"></div><div class="info"><h2>سندباد</h2><span class="btn">دخول</span></div></div>
     <div class="show-card" data-title="كابتن ماجد" data-url="https://cartoony.net/watch/297/4005" data-ep="128"><div class="image-box"><img src="https://www.histoiredesfax.com/wp-content/uploads/2016/11/captain-majed.jpg"></div><div class="info"><h2>كابتن ماجد</h2><span class="btn">دخول</span></div></div>
     <div class="show-card" data-title="المحقق كونان" data-url="https://cartoony.net/watch/453/4243" data-ep="100"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEy4JwDEtrpD4Cd7-IjFN798NHh3egVVr5FFc_P9CvEnL900Cb8m47cdo&s=10"></div><div class="info"><h2>المحقق كونان</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-title="ساسوكي" data-url="https://cartoony.net/watch/31/272" data-ep="29"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/1/18/%D9%85%D8%BA%D8%A7%D9%85%D8%B1%D8%A7%D8%AA_%D8%B3%D8%A7%D8%B3%D9%88%D9%83%D9%8A.jpg"></div><div class="info"><h2>ساسوكي</h2><span class="btn">دخول</span></div></div>
     
-    <!-- رابط صورة ماوكلي الجديد -->
+    <div class="show-card" data-title="ساسوكي" data-url="https://cartoony.net/watch/31/272" data-ep="29"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5sMKhmGom1VMHqGkEktkNC4JnDuKxSWGRXw&s"></div><div class="info"><h2>ساسوكي</h2><span class="btn">دخول</span></div></div>
+    
     <div class="show-card" data-title="ماوكلي" data-url="https://cartoony.net/watch/285/2584" data-ep="52"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjznFShbF_vd8Yh1zQopilsjYtdzV_wVUf9V-D_NB0nHBSRmGfqAFDK9k&s"></div><div class="info"><h2>ماوكلي</h2><span class="btn">دخول</span></div></div>
-
     <div class="show-card" data-title="داي الشجاع" data-url="https://cartoony.net/watch/317/4528" data-ep="46"><div class="image-box"><img src="https://cdn.salla.sa/RAPGYV/983473d0-c331-42d9-8934-24f739fd4032-1000x750.8698677801-Zj9nhp7feJP3r8Q3NwyXa83T47yMySZa9XpPuTuD.png"></div><div class="info"><h2>داي الشجاع</h2><span class="btn">دخول</span></div></div>
-    
-    <!-- رابط صورة سالي الجديد -->
     <div class="show-card" data-title="سالي" data-url="https://cartoony.net/watch/96/691" data-ep="46"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwVX0mbKESve2SFNPmu3-fxmcI2swvhc3iutd0Gl7x8VfxtZR6Xxo9XI5k&s=10"></div><div class="info"><h2>سالي</h2><span class="btn">دخول</span></div></div>
-
     <div class="show-card" data-title="ساندي بيل" data-url="https://cartoony.net/watch/91/740" data-ep="47"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvrx-KgrgypfPbIp-mxobAqav4YBSzesI9r26sC0bSuU8KZrqLtzfStc&s=10"></div><div class="info"><h2>ساندي بيل</h2><span class="btn">دخول</span></div></div>
     <div class="show-card" data-title="هايدي" data-url="https://cartoony.net/watch/220/1914" data-ep="52"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgx9xYssOaaj1ZKcgxxiWKLkRSEDUWF_OyLD8wWdgDzQhs3WDOOOytcqY&s=10"></div><div class="info"><h2>هايدي</h2><span class="btn">دخول</span></div></div>
     <div class="show-card" data-title="عهد الأصدقاء" data-url="https://cartoony.net/watch/321/4576" data-ep="33"><div class="image-box"><img src="https://image.tmdb.org/t/p/w500/7sNRgaXvRgIYvvuJRsAIfwidCUm.jpg"></div><div class="info"><h2>عهد الأصدقاء</h2><span class="btn">دخول</span></div></div>
@@ -113,13 +112,20 @@
     </div>
 </div>
 
-<!-- صفحة الحلقات الداخلية -->
 <div id="watchView">
     <button class="back-btn" onclick="goHome()">⬅ العودة إلى القائمة الرئيسية</button>
     <h2 id="currentShowTitle" style="margin-bottom: 15px; color: var(--primary);"></h2>
     
     <p style="color: #aaa; margin-bottom: 15px; font-size: 0.9rem;">اختر رقم الحلقة للانتقال للمشاهدة فوراً:</p>
     <div class="episodes-grid" id="episodesGrid"></div>
+</div>
+
+<!-- الإعلان السفلي -->
+<div class="ad-bottom">
+    <script>
+      atOptions = { 'key' : 'b8ba5b25ff25e41ea44c2df3a1b05378', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
+    </script>
+    <script src="https://www.highperformanceformat.com/b8ba5b25ff25e41ea44c2df3a1b05378/invoke.js"></script>
 </div>
 
 <footer>
@@ -140,7 +146,8 @@
         const fullUrl = card.getAttribute('data-url');
         const totalEps = parseInt(card.getAttribute('data-ep'));
 
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
             openShow(title, fullUrl, totalEps);
         });
     });
@@ -160,14 +167,29 @@
         for (let i = 1; i <= totalEps; i++) {
             const btn = document.createElement('button');
             btn.className = 'ep-btn';
-            btn.innerText = i;
+            
+            let clickCount = 0;
+            
+            btn.innerHTML = `${i}<span class="click-counter">اضغط 3 مرات</span>`;
             
             let currentEpId = baseEpisodeId + (i - 1);
             let epUrl = `https://cartoony.net/watch/${baseShowId}/${currentEpId}`;
 
             btn.addEventListener('click', function() {
-                window.open(adLink, '_blank');
-                window.location.href = epUrl;
+                clickCount++;
+
+                if (clickCount === 1) {
+                    window.open(adLink, '_blank');
+                    btn.innerHTML = `${i}<span class="click-counter">باقي مرتان</span>`;
+                } 
+                else if (clickCount === 2) {
+                    window.open(adLink, '_blank');
+                    btn.innerHTML = `${i}<span class="click-counter">باقي مرة أخيرة</span>`;
+                } 
+                else if (clickCount >= 3) {
+                    window.open(adLink, '_blank');
+                    window.location.href = epUrl;
+                }
             });
 
             episodesGrid.appendChild(btn);
