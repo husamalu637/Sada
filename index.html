@@ -27,7 +27,7 @@
         .show-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; display: flex; flex-direction: column; height: 190px; transition: 0.3s; cursor: pointer; -webkit-tap-highlight-color: transparent; }
         .show-card:hover { transform: translateY(-5px); border-color: var(--primary); }
         
-        /* تنسيق البطاقات المعطلة (قريباً) */
+        /* تنسيق البطاقات المعطلة (إن وجدت مستقبلاً) */
         .show-card.disabled { opacity: 0.6; cursor: not-allowed; }
         .show-card.disabled:hover { transform: none; border-color: rgba(255,255,255,0.05); }
 
@@ -61,7 +61,7 @@
 </div>
 
 <div class="container" id="animeContainer">
-    <!-- أولاً: الحاويات المفعلة بالكامل (في الأعلى) -->
+    <!-- الحاويات السابقة المفعلة -->
     <div class="show-card" data-external="https://husamalu637.github.io/Sada5/"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/4/44/%D8%B9%D8%AF%D9%86%D8%A7%D9%86_%D9%88%D9%84%D9%8A%D9%86%D8%A7.jpg"></div><div class="info"><h2>عدنان ولينا</h2><span class="btn">دخول</span></div></div>
     
     <div class="show-card" data-external="https://husamalu637.github.io/Lofe/"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2024/Amjad/Aug/Poster_Robin_Hood/original/Poster_Robin_Hood.jpg"></div><div class="info"><h2>روبن هود</h2><span class="btn">دخول</span></div></div>
@@ -103,14 +103,15 @@
     <div class="show-card" data-external="https://husamalu637.github.io/Zoroo/"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/de8d3b54-a791-4b78-9929-16cebba7cf63"></div><div class="info"><h2>زورو</h2><span class="btn">دخول</span></div></div>
     <div class="show-card" data-external="https://husamalu637.github.io/Pokemon/"><div class="image-box"><img src="https://images.justwatch.com/poster/319949873/s332/.jpg"></div><div class="info"><h2>بوكيمون</h2><span class="btn">دخول</span></div></div>
 
-    <!-- ثانياً: الحاويات غير المفعلة (قريباً - في الأسفل) -->
-    <div class="show-card disabled" data-title="الصياد الصغير"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/377_cover.webp"></div><div class="info"><h2>الصياد الصغير</h2><span class="btn">قريباً</span></div></div>
-    <div class="show-card disabled" data-title="سيف النار"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzUg2aIxbt5QEbc1X6M0aglFzIGnARI99JxhnQpC5xr3E0ndY957Zx6hs&s=10"></div><div class="info"><h2>سيف النار</h2><span class="btn">قريباً</span></div></div>
-    <div class="show-card disabled" data-title="المحقق كونان"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEy4JwDEtrpD4Cd7-IjFN798NHh3egVVr5FFc_P9CvEnL900Cb8m47cdo&s=10"></div><div class="info"><h2>المحقق كونان</h2><span class="btn">قريباً</span></div></div>
-    <div class="show-card disabled" data-title="داي الشجاع"><div class="image-box"><img src="https://cdn.salla.sa/RAPGYV/983473d0-c331-42d9-8934-24f739fd4032-1000x750.8698677801-Zj9nhp7feJP3r8Q3NwyXa83T47yMySZa9XpPuTuD.png"></div><div class="info"><h2>داي الشجاع</h2><span class="btn">قريباً</span></div></div>
-    <div class="show-card disabled" data-title="عهد الأصدقاء"><div class="image-box"><img src="https://image.tmdb.org/t/p/w500/7sNRgaXvRgIYvvuJRsAIfwidCUm.jpg"></div><div class="info"><h2>عهد الأصدقاء</h2><span class="btn">قريباً</span></div></div>
-    <div class="show-card disabled" data-title="القناع"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAIVDQYEfyqWYVvlJzHBKYXRt4jS6mMAUoB49WuKRCa_fL8kcT3MrINyk&s=10"></div><div class="info"><h2>القناع</h2><span class="btn">قريباً</span></div></div>
-    <div class="show-card disabled" data-title="دراغون بول"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp4xsSjCcvIzQ27esN0J0lfPAyNhLBxLC7n0Jmcsobo5YjqowHvnCcb9N3&s=10"></div><div class="info"><h2>دراغون بول</h2><span class="btn">قريباً</span></div></div>
+    <!-- البطاقات الثمانية الجديدة التي تم تفعيلها وربطها بالروابط -->
+    <div class="show-card" data-external="https://husamalu637.github.io/Alknaa/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrNo8CVQ9P2X5a8eN_Y4TOuXcUa0KAzayqCmGQZnhGLFt_6GIoOOolH_7f&s=10"></div><div class="info"><h2>السنافر</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-external="https://husamalu637.github.io/Ahd-alasdka/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTLgWlNwfrxCIbLsRP0oToL5bzs5HEkMyAM4Tw9QxhWg&s=10"></div><div class="info"><h2>سنان</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-external="https://husamalu637.github.io/Drakn-pol/"><div class="image-box"><img src="https://www.ranksarabia.com/img/content/052a9108-bfdb-4a10-9241-84c5d5fa9e58.jpg"></div><div class="info"><h2>مغامرات بسيط</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-external="https://husamalu637.github.io/Sefalnar/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw7jJVj_u1ShJ5oY0nOeVCAaAGFRcNXVwbXwXvTqC7rLXH0F4pgdx-fVI&s=10"></div><div class="info"><h2>حكايات عالمية</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-external="https://husamalu637.github.io/Sada3husam/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUkZsFgbebyKU-mmjbPXAf81TVx5gePS4ctxoeLhnd8w&s=10"></div><div class="info"><h2>فادي بائع الحليب</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-external="https://husamalu637.github.io/Konan/"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2024/Amjad/Aug/Poster_Simba/original/Poster_Simba.jpg?width=273&version=1&type=webp"></div><div class="info"><h2>سيمبا</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-external="https://husamalu637.github.io/Koraaa/"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/d/d3/%D9%85%D9%84%D8%B5%D9%82_%D8%A7%D9%84%D8%B1%D9%85%D9%8A%D8%A9_%D8%A7%D9%84%D9%85%D9%84%D8%AA%D9%87%D8%A8%D8%A9_%28%D8%B3%D8%A8%D9%8A%D8%B3%D8%AA%D9%88%D9%86%29.jpeg?utm_source=ar.wikipedia.org&utm_campaign=index&utm_content=original"></div><div class="info"><h2>الرمية الملتهبة</h2><span class="btn">دخول</span></div></div>
+    <div class="show-card" data-external="https://husamalu637.github.io/Kora/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR4egQYBjCNGAyGxcytjHl8GKYOkieohhBd-jZSyNL_A&s=10"></div><div class="info"><h2>شارات الكرتون</h2><span class="btn">دخول</span></div></div>
 </div>
 
 <div class="ad-bottom">
