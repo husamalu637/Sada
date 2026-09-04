@@ -14,12 +14,19 @@
         header { width: 100%; padding: 10px 15px; background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
         header h1 { font-size: 1.1rem; cursor: pointer; }
 
+        .header-controls { display: flex; align-items: center; gap: 6px; }
+
+        /* تنسيق أزرار التبديل (واجهة الكرتون / واجهة الأفلام) */
+        .nav-btn { background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); color: #fff; padding: 5px 10px; border-radius: 20px; font-family: 'Cairo', sans-serif; font-size: 0.75rem; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; -webkit-tap-highlight-color: transparent; }
+        .nav-btn:hover { background: rgba(255, 255, 255, 0.35); }
+        .nav-btn.active { background: #fff; color: #000; border-color: #fff; }
+
         /* حاويات الإعلانات الموحدة */
         .ad-top, .ad-bottom { margin: 10px 0; text-align: center; width: 100%; }
 
         .search-box { position: relative; display: flex; align-items: center; }
-        .search-box input { padding: 5px 10px 5px 30px; border-radius: 20px; border: none; outline: none; font-family: 'Cairo', sans-serif; font-size: 0.8rem; width: 150px; transition: 0.3s; background: rgba(255, 255, 255, 0.9); }
-        .search-box input:focus { width: 180px; background: #fff; }
+        .search-box input { padding: 5px 10px 5px 30px; border-radius: 20px; border: none; outline: none; font-family: 'Cairo', sans-serif; font-size: 0.8rem; width: 120px; transition: 0.3s; background: rgba(255, 255, 255, 0.9); }
+        .search-box input:focus { width: 150px; background: #fff; }
         .search-icon { position: absolute; left: 10px; color: #3a7bd5; font-size: 0.9rem; pointer-events: none; }
 
         .container { width: 98%; max-width: 1200px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 5px; }
@@ -47,9 +54,16 @@
 
 <header>
     <h1>صدى الطفولة</h1>
-    <div class="search-box" id="searchWrapper">
-        <input type="text" id="searchInput" placeholder="بحث عن مسلسل...">
-        <span class="search-icon">🔍</span>
+    <div class="header-controls">
+        <!-- زر واجهة الكرتون (الرئيسية حالياً) -->
+        <a href="#" class="nav-btn active">📺 الكرتون</a>
+        <!-- زر واجهة الأفلام مرتبط بالرابط الخاص بك -->
+        <a href="https://husamalu637.github.io/Aflam/" class="nav-btn">🎬 الأفلام</a>
+
+        <div class="search-box" id="searchWrapper">
+            <input type="text" id="searchInput" placeholder="بحث...">
+            <span class="search-icon">🔍</span>
+        </div>
     </div>
 </header>
 
@@ -63,7 +77,6 @@
 <div class="container" id="animeContainer">
     <div class="show-card" data-external="https://husamalu637.github.io/Sada5/"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/4/44/%D8%B9%D8%AF%D9%86%D8%A7%D9%86_%D9%88%D9%84%D9%8A%D9%86%D8%A7.jpg" alt="كرتون عدنان ولينا"></div><div class="info"><h2>عدنان ولينا</h2><span class="btn">دخول</span></div></div>
     
-    <!-- تم تحديث رابط روبن هود هنا -->
     <div class="show-card" data-external="https://husamalu637.github.io/Sada2husam/"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2024/Amjad/Aug/Poster_Robin_Hood/original/Poster_Robin_Hood.jpg" alt="كرتون روبن هود"></div><div class="info"><h2>روبن هود</h2><span class="btn">دخول</span></div></div>
 
     <div class="show-card" data-external="https://husamalu637.github.io/Lofe/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGtNeZ4G52s254ahSPY8kL2mGQanWaDRPXB6n80KchbQ&s=10" alt="كرتون هزيم الرعد"></div><div class="info"><h2>هزيم الرعد</h2><span class="btn">دخول</span></div></div>
@@ -112,10 +125,8 @@
     <div class="show-card" data-external="https://husamalu637.github.io/Koraaa/"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/d/d3/%D9%85%D9%84%D8%B5%D9%82_%D8%A7%D9%84%D8%B1%D9%85%D9%8A%D8%A9_%D8%A7%D9%84%D9%85%D9%84%D8%AA%D9%87%D8%A8%D8%A9_%28%D8%B3%D8%A8%D9%8A%D8%B3%D8%AA%D9%88%D9%86%29.jpeg?utm_source=ar.wikipedia.org&utm_campaign=index&utm_content=original" alt="كرتون الرمية الملتهبة"></div><div class="info"><h2>الرمية الملتهبة</h2><span class="btn">دخول</span></div></div>
     <div class="show-card" data-external="https://husamalu637.github.io/Kora/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR4egQYBjCNGAyGxcytjHl8GKYOkieohhBd-jZSyNL_A&s=10" alt="شارات الكرتون القديم"></div><div class="info"><h2>شارات الكرتون</h2><span class="btn">دخول</span></div></div>
 
-    <!-- ماروكو -->
     <div class="show-card" data-external="https://husamalu637.github.io/Maroko/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1phFUp6ACYXgd8T7Q6ARc9_t3VzNNP8OIFELxhd12NppaKdxLlWSZ9A4Rj-EnK4Yp9aakRQqW5LP-FVdqlCsa8HkwO9wKJPC_Bb3mg&s=10" alt="كرتون ماروكو"></div><div class="info"><h2>ماروكو</h2><span class="btn">دخول</span></div></div>
     
-    <!-- صقور الأرض -->
     <div class="show-card" data-external="https://husamalu637.github.io/Skor-al-ard/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZDEmqWVtRi02J14_FNDLgG7vrK0S1jGZgmhDp6_5kpA&s=10" alt="كرتون صقور الأرض"></div><div class="info"><h2>صقور الأرض</h2><span class="btn">دخول</span></div></div>
 </div>
 
@@ -148,7 +159,7 @@
 
     document.getElementById('searchInput').addEventListener('input', function() {
         let filter = this.value.toLowerCase();
-        document.querySelectorAll('.show-card').forEach(card => {
+        document.querySelectorAll('.show-card').forEach(card =>{
             let title = card.querySelector('h2').innerText.toLowerCase();
             card.style.display = title.includes(filter) ? "" : "none";
         });
