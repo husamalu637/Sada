@@ -33,16 +33,14 @@
         .show-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; display: flex; flex-direction: column; height: 190px; transition: 0.3s; cursor: pointer; -webkit-tap-highlight-color: transparent; }
         .show-card:hover { transform: translateY(-5px); border-color: var(--primary); }
         
-        .show-card.disabled { opacity: 0.6; cursor: not-allowed; }
-        .show-card.disabled:hover { transform: none; border-color: rgba(255,255,255,0.05); }
+        .show-card.disabled { opacity: 0.6; cursor: not-allowed; pointer-events: none; }
 
         .image-box { width: 100%; height: 110px; background: #000; overflow: hidden; }
         .image-box img { width: 100%; height: 100%; object-fit: cover; }
         
         .info { padding: 6px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .info h2 { font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 5px; }
+        .info h2 { font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 5px; color: white; }
         .btn { background: var(--primary); color: #000; padding: 3px 0; border-radius: 5px; font-size: 0.65rem; font-weight: bold; width: 100%; display: block; }
-        .show-card.disabled .btn { background: #444; color: #aaa; }
 
         footer { margin: 20px 0 15px; padding: 15px; text-align: center; font-size: 0.75rem; color: #888; border-top: 1px solid #333; width: 90%; }
         footer p { margin-bottom: 5px; line-height: 1.5; }
@@ -71,95 +69,111 @@
 </div>
 
 <div class="container" id="animeContainer">
-    <div class="show-card" data-external="https://husamalu637.github.io/Sada5/"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/4/44/%D8%B9%D8%AF%D9%86%D8%A7%D9%86_%D9%88%D9%84%D9%8A%D9%86%D8%A7.jpg" alt="كرتون عدنان ولينا"></div><div class="info"><h2>عدنان ولينا</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Sada5/" class="show-card"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/4/44/%D8%B9%D8%AF%D9%86%D8%A7%D9%86_%D9%88%D9%84%D9%8A%D9%86%D8%A7.jpg" alt="كرتون عدنان ولينا"></div><div class="info"><h2>عدنان ولينا</h2><span class="btn">دخول</span></div></a>
     
-    <div class="show-card" data-external="https://husamalu637.github.io/Sada2husam/"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2024/Amjad/Aug/Poster_Robin_Hood/original/Poster_Robin_Hood.jpg" alt="كرتون روبن هود"></div><div class="info"><h2>روبن هود</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Sada2husam/" class="show-card"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2024/Amjad/Aug/Poster_Robin_Hood/original/Poster_Robin_Hood.jpg" alt="كرتون روبن هود"></div><div class="info"><h2>روبن هود</h2><span class="btn">دخول</span></div></a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Lofe/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGtNeZ4G52s254ahSPY8kL2mGQanWaDRPXB6n80KchbQ&s=10" alt="كرتون هزيم الرعد"></div><div class="info"><h2>هزيم الرعد</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Lofe/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGtNeZ4G52s254ahSPY8kL2mGQanWaDRPXB6n80KchbQ&s=10" alt="كرتون هزيم الرعد"></div><div class="info"><h2>هزيم الرعد</h2><span class="btn">دخول</span></div></a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Drobremeehusam/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlsAwQl7F3xIMKTteRi2rNW6NRGixVHp5zKUIljz1DtEpOD7TgH0JxcHP0&s=10" alt="كرتون ريمي"></div><div class="info"><h2>ريمي</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Drobremeehusam/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlsAwQl7F3xIMKTteRi2rNW6NRGixVHp5zKUIljz1DtEpOD7TgH0JxcHP0&s=10" alt="كرتون ريمي"></div><div class="info"><h2>ريمي</h2><span class="btn">دخول</span></div></a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Haede/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgx9xYssOaaj1ZKcgxxiWKLkRSEDUWF_OyLD8wWdgDzQhs3WDOOOytcqY&s=10" alt="كرتون هايدي"></div><div class="info"><h2>هايدي</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Haede/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgx9xYssOaaj1ZKcgxxiWKLkRSEDUWF_OyLD8wWdgDzQhs3WDOOOytcqY&s=10" alt="كرتون هايدي"></div><div class="info"><h2>هايدي</h2><span class="btn">دخول</span></div></a>
     
-    <div class="show-card" data-external="https://husamalu637.github.io/Jlndezrr/"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/5/5d/UFO_Robo_Grendizer.jpg" alt="كرتون غريندايزر"></div><div class="info"><h2>غريندايزر</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Jlndezrr/" class="show-card"><div class="image-box"><img src="https://upload.wikimedia.org/wikipedia/ar/5/5d/UFO_Robo_Grendizer.jpg" alt="كرتون غريندايزر"></div><div class="info"><h2>غريندايزر</h2><span class="btn">دخول</span></div></a>
     
-    <div class="show-card" data-external="https://husamalu637.github.io/Tomswar/"><div class="image-box"><img src="https://images.justwatch.com/poster/334335154/s718/twm-swyr.jpg" alt="كرتون توم سوير"></div><div class="info"><h2>توم سوير</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Tomswar/" class="show-card"><div class="image-box"><img src="https://images.justwatch.com/poster/334335154/s718/twm-swyr.jpg" alt="كرتون توم سوير"></div><div class="info"><h2>توم سوير</h2><span class="btn">دخول</span></div></a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Husam123j/"><div class="image-box"><img src="https://i.scdn.co/image/ab67616d0000b27335bde142cf7b1174b059bfba" alt="كرتون جزيرة الكنز"></div><div class="info"><h2>جزيرة الكنز</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Husam123j/" class="show-card"><div class="image-box"><img src="https://i.scdn.co/image/ab67616d0000b27335bde142cf7b1174b059bfba" alt="كرتون جزيرة الكنز"></div><div class="info"><h2>جزيرة الكنز</h2><span class="btn">دخول</span></div></a>
     
-    <div class="show-card" data-external="https://husamalu637.github.io/Sasuke/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5sMKhmGom1VMHqGkEktkNC4JnDuKxSWGRXw&s" alt="كرتون ساسوكي"></div><div class="info"><h2>ساسوكي</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Sasuke/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5sMKhmGom1VMHqGkEktkNC4JnDuKxSWGRXw&s" alt="كرتون ساسوكي"></div><div class="info"><h2>ساسوكي</h2><span class="btn">دخول</span></div></a>
     
-    <div class="show-card" data-external="https://husamalu637.github.io/Rabh/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkwDtPS0N7Qg4j1T6sgNcKOIW9aG-qD5v4mm7k19nLzqbmOaN86GDSupu91q14GU1iw6Uqvgel2_FCntOPH-NiehMCWqfQFgaiT7M3XVQ&s=10" alt="كرتون كابتن رابح"></div><div class="info"><h2>كابتن رابح</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Rabh/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkwDtPS0N7Qg4j1T6sgNcKOIW9aG-qD5v4mm7k19nLzqbmOaN86GDSupu91q14GU1iw6Uqvgel2_FCntOPH-NiehMCWqfQFgaiT7M3XVQ&s=10" alt="كرتون كابتن رابح"></div><div class="info"><h2>كابتن رابح</h2><span class="btn">دخول</span></div></a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Nmrmoknh/">
+    <a href="https://husamalu637.github.io/Nmrmoknh/" class="show-card">
         <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp0fRWbdpr0G-lmqC_sDfauw9XG6_GA9p2MqR3Bzcf8QA-Zq2sQ3cPhwg&s=10" alt="كرتون النمر المقنع"></div>
         <div class="info"><h2>النمر المقنع</h2><span class="btn">دخول</span></div>
-    </div>
+    </a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Lozwskr/"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/552_cover.webp" alt="كرتون لوز و سكر"></div><div class="info"><h2>لوز و سكر</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Feke/"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/0a0199dd-2143-491b-ae7a-c2cd1fa72a5e_cover.webp" alt="كرتون فيكي"></div><div class="info"><h2>فيكي</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Sahpalzl/"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/822_cover.webp" alt="كرتون صاحب الظل الطويل"></div><div class="info"><h2>صاحب الظل الطويل</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Krm-al-moktrh/"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/528_cover.webp" alt="كرتون المخترع الصغير"></div><div class="info"><h2>المخترع الصغير</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Hadeka-srea/"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/637_cover.webp" alt="كرتون الحديقة السرية"></div><div class="info"><h2>الحديقة السرية</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Flona/"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2021/MARCH/amjad/untitled/Flona_poster/original/Flona_poster.jpg" alt="كرتون فلونا"></div><div class="info"><h2>فلونا</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Andpat/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrGRiROHQ25JowU4PS07b7b0rnyLGNSeJiaiH64oz74fSVB3XIavf5gQ&s=10" alt="كرتون سندباد"></div><div class="info"><h2>سندباد</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Kaptnmajd/"><div class="image-box"><img src="https://www.histoiredesfax.com/wp-content/uploads/2016/11/captain-majed.jpg" alt="كرتون كابتن ماجد"></div><div class="info"><h2>كابتن ماجد</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Maokle/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjznFShbF_vd8Yh1zQopilsjYtdzV_wVUf9V-D_NB0nHBSRmGfqAFDK9k&s" alt="كرتون ماوكلي"></div><div class="info"><h2>ماوكلي</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Sale/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwVX0mbKESve2SFNPmu3-fxmcI2swvhc3iutd0Gl7x8VfxtZR6Xxo9XI5k&s=10" alt="كرتون سالي"></div><div class="info"><h2>سالي</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Sande-pel/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvrx-KgrgypfPbIp-mxobAqav4YBSzesI9r26sC0bSuU8KZrqLtzfStc&s=10" alt="كرتون ساندي بيل"></div><div class="info"><h2>ساندي بيل</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Modafon/"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/b1b8b481-eb47-4145-8925-241a6a6b88ef_cover.webp" alt="كرتون المدافعون"></div><div class="info"><h2>المدافعون</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Ana-wa-akhi/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsp_tC0L8OYNDphmTAYJyIPnoX92nDcfRArgQyI_cZVg&s=10" alt="كرتون أنا وأخي"></div><div class="info"><h2>أنا وأخي</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Zoroo/"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/de8d3b54-a791-4b78-9929-16cebba7cf63" alt="كرتون زورو"></div><div class="info"><h2>زورو</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Pokemon/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0llE5vQhMxSoL07dnkqfmTIM6y2kqFjjP_j7s6r51YA&s=10" alt="كرتون بوكيمون"></div><div class="info"><h2>بوكيمون</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Lozwskr/" class="show-card"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/552_cover.webp" alt="كرتون لوز و سكر"></div><div class="info"><h2>لوز و سكر</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Feke/" class="show-card"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/0a0199dd-2143-491b-ae7a-c2cd1fa72a5e_cover.webp" alt="كرتون فيكي"></div><div class="info"><h2>فيكي</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Sahpalzl/" class="show-card"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/822_cover.webp" alt="كرتون صاحب الظل الطويل"></div><div class="info"><h2>صاحب الظل الطويل</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Krm-al-moktrh/" class="show-card"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/528_cover.webp" alt="كرتون المخترع الصغير"></div><div class="info"><h2>المخترع الصغير</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Hadeka-srea/" class="show-card"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/637_cover.webp" alt="كرتون الحديقة السرية"></div><div class="info"><h2>الحديقة السرية</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Flona/" class="show-card"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2021/MARCH/amjad/untitled/Flona_poster/original/Flona_poster.jpg" alt="كرتون فلونا"></div><div class="info"><h2>فلونا</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Andpat/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrGRiROHQ25JowU4PS07b7b0rnyLGNSeJiaiH64oz74fSVB3XIavf5gQ&s=10" alt="كرتون سندباد"></div><div class="info"><h2>سندباد</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Kaptnmajd/" class="show-card"><div class="image-box"><img src="https://www.histoiredesfax.com/wp-content/uploads/2016/11/captain-majed.jpg" alt="كرتون كابتن ماجد"></div><div class="info"><h2>كابتن ماجد</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Maokle/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjznFShbF_vd8Yh1zQopilsjYtdzV_wVUf9V-D_NB0nHBSRmGfqAFDK9k&s" alt="كرتون ماوكلي"></div><div class="info"><h2>ماوكلي</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Sale/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwVX0mbKESve2SFNPmu3-fxmcI2swvhc3iutd0Gl7x8VfxtZR6Xxo9XI5k&s=10" alt="كرتون سالي"></div><div class="info"><h2>سالي</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Sande-pel/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvrx-KgrgypfPbIp-mxobAqav4YBSzesI9r26sC0bSuU8KZrqLtzfStc&s=10" alt="كرتون ساندي بيل"></div><div class="info"><h2>ساندي بيل</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Modafon/" class="show-card"><div class="image-box"><img src="https://cartoony.net/assets/img/posters/b1b8b481-eb47-4145-8925-241a6a6b88ef_cover.webp" alt="كرتون المدافعون"></div><div class="info"><h2>المدافعون</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Ana-wa-akhi/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsp_tC0L8OYNDphmTAYJyIPnoX92nDcfRArgQyI_cZVg&s=10" alt="كرتون أنا وأخي"></div><div class="info"><h2>أنا وأخي</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Zoroo/" class="show-card"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/de8d3b54-a791-4b78-9929-16cebba7cf63" alt="كرتون زورو"></div><div class="info"><h2>زورو</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Pokemon/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0llE5vQhMxSoL07dnkqfmTIM6y2kqFjjP_j7s6r51YA&s=10" alt="كرتون بوكيمون"></div><div class="info"><h2>بوكيمون</h2><span class="btn">دخول</span></div></a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Alknaa/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrNo8CVQ9P2X5a8eN_Y4TOuXcUa0KAzayqCmGQZnhGLFt_6GIoOOolH_7f&s=10" alt="كرتون السنافر"></div><div class="info"><h2>السنافر</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Ahd-alasdka/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTLgWlNwfrxCIbLsRP0oToL5bzs5HEkMyAM4Tw9QxhWg&s=10" alt="كرتون سنان"></div><div class="info"><h2>سنان</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Drakn-pol/"><div class="image-box"><img src="https://www.ranksarabia.com/img/content/052a9108-bfdb-4a10-9241-84c5d5fa9e58.jpg" alt="كرتون مغامرات بسيط"></div><div class="info"><h2>مغامرات بسيط</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Sefalnar/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw7jJVj_u1ShJ5oY0nOeVCAaAGFRcNXVwbXwXvTqC7rLXH0F4pgdx-fVI&s=10" alt="كرتون حكايات عالمية"></div><div class="info"><h2>حكايات عالمية</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Sada3husam/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUkZsFgbebyKU-mmjbPXAf81TVx5gePS4ctxoeLhnd8w&s=10" alt="كرتون فادي بائع الحليب"></div><div class="info"><h2>فادي بائع الحليب</h2><span class="btn">دخول</span></div></div>
-    <div class="show-card" data-external="https://husamalu637.github.io/Konan/"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2024/Amjad/Aug/Poster_Simba/original/Poster_Simba.jpg?width=273&version=1&type=webp" alt="كرتون سيمبا"></div><div class="info"><h2>سيمبا</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Alknaa/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrNo8CVQ9P2X5a8eN_Y4TOuXcUa0KAzayqCmGQZnhGLFt_6GIoOOolH_7f&s=10" alt="كرتون السنافر"></div><div class="info"><h2>السنافر</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Ahd-alasdka/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTLgWlNwfrxCIbLsRP0oToL5bzs5HEkMyAM4Tw9QxhWg&s=10" alt="كرتون سنان"></div><div class="info"><h2>سنان</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Drakn-pol/" class="show-card"><div class="image-box"><img src="https://www.ranksarabia.com/img/content/052a9108-bfdb-4a10-9241-84c5d5fa9e58.jpg" alt="كرتون مغامرات بسيط"></div><div class="info"><h2>مغامرات بسيط</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Sefalnar/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw7jJVj_u1ShJ5oY0nOeVCAaAGFRcNXVwbXwXvTqC7rLXH0F4pgdx-fVI&s=10" alt="كرتون حكايات عالمية"></div><div class="info"><h2>حكايات عالمية</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Sada3husam/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUkZsFgbebyKU-mmjbPXAf81TVx5gePS4ctxoeLhnd8w&s=10" alt="كرتون فادي بائع الحليب"></div><div class="info"><h2>فادي بائع الحليب</h2><span class="btn">دخول</span></div></a>
+    <a href="https://husamalu637.github.io/Konan/" class="show-card"><div class="image-box"><img src="https://shahid.mbc.net/mediaObject/2024/Amjad/Aug/Poster_Simba/original/Poster_Simba.jpg?width=273&version=1&type=webp" alt="كرتون سيمبا"></div><div class="info"><h2>سيمبا</h2><span class="btn">دخول</span></div></a>
     
-    <div class="show-card" data-external="https://husamalu637.github.io/Koraaa/">
+    <a href="https://husamalu637.github.io/Koraaa/" class="show-card">
         <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR41Kp0quPfOOnKxvV44Z3EsTKzpjJHhu7aROJC3KQpqaMgW6mMoUd30ZI&s=10" alt="كرتون الرمية الملتهبة"></div>
         <div class="info"><h2>الرمية الملتهبة</h2><span class="btn">دخول</span></div>
-    </div>
+    </a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Kora/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR4egQYBjCNGAyGxcytjHl8GKYOkieohhBd-jZSyNL_A&s=10" alt="شارات الكرتون القديم"></div><div class="info"><h2>شارات الكرتون</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Kora/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR4egQYBjCNGAyGxcytjHl8GKYOkieohhBd-jZSyNL_A&s=10" alt="شارات الكرتون القديم"></div><div class="info"><h2>شارات الكرتون</h2><span class="btn">دخول</span></div></a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Maroko/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1phFUp6ACYXgd8T7Q6ARc9_t3VzNNP8OIFELxhd12NppaKdxLlWSZ9A4Rj-EnK4Yp9aakRQqW5LP-FVdqlCsa8HkwO9wKJPC_Bb3mg&s=10" alt="كرتون ماروكو"></div><div class="info"><h2>ماروكو</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Maroko/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1phFUp6ACYXgd8T7Q6ARc9_t3VzNNP8OIFELxhd12NppaKdxLlWSZ9A4Rj-EnK4Yp9aakRQqW5LP-FVdqlCsa8HkwO9wKJPC_Bb3mg&s=10" alt="كرتون ماروكو"></div><div class="info"><h2>ماروكو</h2><span class="btn">دخول</span></div></a>
     
-    <div class="show-card" data-external="https://husamalu637.github.io/Skor-al-ard/"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZDEmqWVtRi02J14_FNDLgG7vrK0S1jGZgmhDp6_5kpA&s=10" alt="كرتون صقور الأرض"></div><div class="info"><h2>صقور الأرض</h2><span class="btn">دخول</span></div></div>
+    <a href="https://husamalu637.github.io/Skor-al-ard/" class="show-card"><div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZDEmqWVtRi02J14_FNDLgG7vrK0S1jGZgmhDp6_5kpA&s=10" alt="كرتون صقور الأرض"></div><div class="info"><h2>صقور الأرض</h2><span class="btn">دخول</span></div></a>
 
-    <!-- البطاقات الـ 6 المربوطة بالروابط الجديدة -->
-    <div class="show-card" data-external="https://husamalu637.github.io/Dragnpol/">
+    <!-- البطاقات الـ 6 السابقة -->
+    <a href="https://husamalu637.github.io/Dragnpol/" class="show-card">
         <div class="image-box"><img src="https://cdn.alweb.com/thumbs/daleelalmanga/article/fit710x532/%D9%85%D8%A7%D9%86%D8%AC%D8%A7-%D8%AF%D8%B1%D8%A7%D8%BA%D9%88%D9%86-%D8%A8%D9%88%D9%84-%D8%B3%D9%88%D8%A8%D8%B1.jpg" alt="دراغون بول"></div>
         <div class="info"><h2>دراغون بول</h2><span class="btn">دخول</span></div>
-    </div>
+    </a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Alkna2/">
+    <a href="https://husamalu637.github.io/Alkna2/" class="show-card">
         <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr4jGayiPqm0QMLris407rtjnGbBWhrVwr314XRR1p0g&s=10" alt="القناع"></div>
         <div class="info"><h2>القناع</h2><span class="btn">دخول</span></div>
-    </div>
+    </a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Konan-2/">
+    <a href="https://husamalu637.github.io/Konan-2/" class="show-card">
         <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQGl2vUB_NpT7R41ZUwWhMTlHeGaAg_w3MxYsEIWUZbDXX4POA4UsCG_o&s=10" alt="المحقق كونان"></div>
         <div class="info"><h2>المحقق كونان</h2><span class="btn">دخول</span></div>
-    </div>
+    </a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Lofee2/">
+    <a href="https://husamalu637.github.io/Lofee2/" class="show-card">
         <div class="image-box"><img src="https://www.aljazeera.net/wp-content/uploads/2022/01/One_Piece.png?resize=1800%2C1280" alt="لوفي"></div>
         <div class="info"><h2>لوفي</h2><span class="btn">دخول</span></div>
-    </div>
+    </a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Sefalnar2/">
+    <a href="https://husamalu637.github.io/Sefalnar2/" class="show-card">
         <div class="image-box"><img src="https://www.arabic-toons.com/images/anime/cat_1413672029.jpg" alt="سيف النار"></div>
         <div class="info"><h2>سيف النار</h2><span class="btn">دخول</span></div>
-    </div>
+    </a>
 
-    <div class="show-card" data-external="https://husamalu637.github.io/Daee2/">
+    <a href="https://husamalu637.github.io/Daee2/" class="show-card">
         <div class="image-box"><img src="https://cdn.salla.sa/RAPGYV/983473d0-c331-42d9-8934-24f739fd4032-1000x750.8698677801-Zj9nhp7feJP3r8Q3NwyXa83T47yMySZa9XpPuTuD.png" alt="داي الشجاع"></div>
         <div class="info"><h2>داي الشجاع</h2><span class="btn">دخول</span></div>
-    </div>
+    </a>
+
+    <!-- البطاقات الثلاث الجديدة مع روابطها المخصصة -->
+    <a href="https://husamalu637.github.io/Patman/" class="show-card">
+        <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReV3rMih4M8FaIV9zBLsqUHbSpBlLaAD8ZP5w8UXOb3Q&s=10" alt="باتمان"></div>
+        <div class="info"><h2>باتمان</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <a href="https://husamalu637.github.io/Ahdalasdka2/" class="show-card">
+        <div class="image-box"><img src="https://i.scdn.co/image/ab67616d0000b2736fa27bb4c2b60fb0a479e5ba" alt="عهد الأصدقاء"></div>
+        <div class="info"><h2>عهد الأصدقاء</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <a href="https://husamalu637.github.io/Spaedrman/" class="show-card">
+        <div class="image-box"><img src="https://cartoony.net/assets/img/posters/680_cover.webp" alt="سبايدر مان"></div>
+        <div class="info"><h2>سبايدر مان</h2><span class="btn">دخول</span></div>
+    </a>
 </div>
 
 <div class="ad-bottom">
@@ -175,23 +189,10 @@
 </footer>
 
 <script>
-    document.querySelectorAll('.show-card').forEach(card => {
-        const externalUrl = card.getAttribute('data-external');
-        const isDisabled = card.classList.contains('disabled');
-
-        card.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (isDisabled) return;
-
-            if (externalUrl && externalUrl !== '#') {
-                window.location.href = externalUrl;
-            }
-        });
-    });
-
+    // سكريبت البحث المباشر للبطاقات
     document.getElementById('searchInput').addEventListener('input', function() {
         let filter = this.value.toLowerCase();
-        document.querySelectorAll('.show-card').forEach(card =>{
+        document.querySelectorAll('.show-card').forEach(card => {
             let title = card.querySelector('h2').innerText.toLowerCase();
             card.style.display = title.includes(filter) ? "" : "none";
         });
