@@ -42,11 +42,12 @@
         .info h2 { font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 5px; color: white; }
         .btn { background: var(--primary); color: #000; padding: 3px 0; border-radius: 5px; font-size: 0.65rem; font-weight: bold; width: 100%; display: block; }
 
-        .interface-switch { display: flex; justify-content: center; align-items: center; gap: 12px; margin: 20px 0 10px; width: 100%; }
-        .interface-btn { width: 70px; height: 55px; border-radius: 12px; font-family: 'Cairo', sans-serif; font-size: 1.3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; text-decoration: none; cursor: pointer; transition: 0.3s; -webkit-tap-highlight-color: transparent; }
-        .interface-btn.filled { background: var(--primary); color: #000; border: 2px solid var(--primary); }
-        .interface-btn.outline { background: transparent; color: var(--text); border: 2px solid var(--primary); }
-        .interface-btn:active { transform: scale(0.95); }
+        .pagination-footer { display: flex; justify-content: center; gap: 8px; margin: 15px 0; }
+        .page-btn { background: var(--card-bg); border: 2px solid var(--primary); color: var(--text); width: 70px; height: 55px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-family: 'Cairo', sans-serif; font-size: 1.3rem; font-weight: 800; cursor: pointer; text-decoration: none; transition: 0.3s; }
+        .page-btn:hover { background: rgba(0, 210, 255, 0.2); }
+        .page-btn.active { background: var(--primary); color: #000; box-shadow: 0 0 12px var(--primary); }
+
+        .ad-bottom { margin: 15px 0; text-align: center; width: 100%; min-height: 50px; }
 
         footer { margin: 10px 0 15px; padding: 15px; text-align: center; font-size: 0.75rem; color: #888; border-top: 1px solid #333; width: 90%; }
         footer p { margin-bottom: 5px; line-height: 1.5; }
@@ -189,10 +190,18 @@
     </a>
 </div>
 
-<!-- زرا التبديل بين الواجهتين -->
-<div class="interface-switch">
-    <a href="https://husamalu637.github.io/Sada2/" class="interface-btn filled">2</a>
-    <a href="#" class="interface-btn outline">1</a>
+<!-- أزرار التنقل في الأسفل (الرقم 1 مفعل هنا، ورقم 2 ينقل للواجهة الثانية) -->
+<div class="pagination-footer">
+    <a href="#" class="page-btn active">1</a>
+    <a href="https://husamalu637.github.io/Sada2/" class="page-btn">2</a>
+</div>
+
+<!-- إعلان البنر أسفل الموقع -->
+<div class="ad-bottom">
+    <script>
+      atOptions = { 'key' : 'b8ba5b25ff25e41ea44c2df3a1b05378', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
+    </script>
+    <script src="https://www.highperformanceformat.com/b8ba5b25ff25e41ea44c2df3a1b05378/invoke.js"></script>
 </div>
 
 <!-- إعلان البنر أسفل الموقع -->
