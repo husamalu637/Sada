@@ -258,13 +258,15 @@
         const card = e.target.closest('.show-card');
         if (!card || !AD_LINK) return;
 
-        let last = 0;
-        try { last = parseInt(localStorage.getItem('lastAdTime') || '0', 10); } catch (err) {}
         const now = Date.now();
-        if (now - last < AD_INTERVAL_SECONDS * 1000) return;
+        if (AD_INTERVAL_SECONDS > 0) {
+            let last = 0;
+            try { last = parseInt(localStorage.getItem('lastAdTime_cartoon') || '0', 10); } catch (err) {}
+            if (now - last < AD_INTERVAL_SECONDS * 1000) return;
+            try { localStorage.setItem('lastAdTime_cartoon', String(now)); } catch (err) {}
+        }
 
         e.preventDefault();
-        try { localStorage.setItem('lastAdTime', String(now)); } catch (err) {}
         window.open(AD_LINK, '_blank');      // يفتح الإعلان في تبويب جديد
         window.location.href = card.href;    // وتنتقل الصفحة الحالية إلى الكرتون
     });
